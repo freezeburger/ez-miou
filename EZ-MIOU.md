@@ -1,4 +1,23 @@
+## Repartition
+
+
+* button  : thomas*
+* avatar  : cyriaque
+* image-slider  : norbert
+* message  : cyriaque
+* message-list  : vincent
+* notifier : ludovic
+* room-card : christophe
+* room-cloud : raf > . <
+* room-creator : younes
+* room-searh : didier
+* talk-editor : raf > . <
+* talk-header : younes
+* user-list : constant
+* user-profile : younes
+
 ## EZ-MIOU
+
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaG-VV1U-ni1osTrjwG0tU6AFaArmvOnKcZ2UZjxxPMFWzFpMm)
 
