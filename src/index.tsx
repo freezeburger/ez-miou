@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Me from './app/components/me/me.component';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const data = {key:123456}
+
+ReactDOM.render(<Me title="Hello World" age="42" user={data}><input/></Me>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// serviceWorker.unregister();
