@@ -21,10 +21,16 @@ export const UserProfile = (props: UserProps) => {
                 <img src={props.avatar} className="img-responsive" alt=""/>
             </div>
             <div className="profile-usertitle">
+                <div className="profile-usertitle-id">
+                    {props.id}
+                </div>
                 <div className="profile-usertitle-name">
                     {props.name}
                 </div>
-                <div className="profile-usertitle-job">
+                <div className="profile-usertitle-status">
+                    {props.status}
+                </div>
+                <div className="profile-usertitle-email">
                     {props.email}
                 </div>
             </div>
