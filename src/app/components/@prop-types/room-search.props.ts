@@ -2,7 +2,7 @@
  * Defines the props expected by the RoomSearch component.
  * @see RoomSearch
  */
-export default interface RoomSearchProps {
+interface RoomSearchProps {
     /**
      * List of rooms that currently exist. Used for completion
      */
@@ -15,3 +15,5 @@ export default interface RoomSearchProps {
      */
     onSearchCompleted(roomName: string): Function;
 }
+
+export default RoomSearchProps;
