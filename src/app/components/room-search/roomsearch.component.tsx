@@ -3,6 +3,9 @@ import RoomSearchProps from '../@prop-types/room-search.props';
 import Button from '../button/button.component';
 import { FaSearch } from 'react-icons/fa';
 
+/**
+ * The state contains the term being searched
+ */
 interface RoomSearchState {
     searchTerm: string;
 }
@@ -12,9 +15,6 @@ interface RoomSearchState {
  */
 class RoomSearch extends React.Component<RoomSearchProps, RoomSearchState> {
     
-    /**
-     * The state contains the term being searched
-     */
     state = {
         searchTerm: ''
     };
