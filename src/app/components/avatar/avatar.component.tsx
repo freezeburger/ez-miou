@@ -35,7 +35,7 @@ class Avatar extends React.Component<AvatarProps, IState> {
     const styles = {
       width: size + 'px',
       height: size + 'px'
-    }
+    };
 
     var classes = ['avatar', { 'avatar-rounded': rounded, loaded }];
     return (
