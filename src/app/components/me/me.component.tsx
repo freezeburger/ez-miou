@@ -1,13 +1,15 @@
 import React from 'react';
-import Avatar from '../avatar/avatar.component';
+import MeProps from '../@prop-types/me.props';
 
-export const Me = (props: any) => {
-  console.log(props); //readonly
+export const Me = (props: MeProps) => {
   return (
     <div>
-      Me <Avatar rounded={true} />
-    </div>
+      {props.name}
+     </div>
   );
 };
+Me.defaultProps = {
+  name:'Hello'
+}
 
 export default Me;
