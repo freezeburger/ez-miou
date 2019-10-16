@@ -2,7 +2,7 @@ interface ButtonProps{
     /**
      * Element Show in the button
      */
-    children: string;
+    children: React.ReactElement;
     /**
      * Function we will call when the button will be clicked
      */
@@ -10,7 +10,7 @@ interface ButtonProps{
     /**
      * Icon of the button based on reactIcon
      */
-    icon?: JSX.Element;
+    icon?: React.ReactElement;
     /**
     * tab of className for css custom
     */

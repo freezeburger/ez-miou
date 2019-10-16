@@ -1,5 +1,6 @@
 import React from 'react';
 import AvatarProps from '../@prop-types/avatar.props';
+import "./avatar.scss";
 
 interface IState {
   size: number;

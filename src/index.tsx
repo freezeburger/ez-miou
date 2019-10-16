@@ -19,7 +19,7 @@ ReactDOM.render(
             <input />
             <Avatar size={50} src={'dd'} />
         </Me>
-        <Button children="test" action={() => {console.log('test')}} icon={<FaBeer />}></Button>
+        <Button children={<h2>test</h2>} action={() => {console.log('test')}} icon={<FaBeer />}></Button>
     </div>
   ,
   document.getElementById('root')

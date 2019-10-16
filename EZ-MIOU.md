@@ -9,7 +9,7 @@
 * notifier : ludovic
 * room-card : christophe
 * room-cloud : raf > . <
-* room-creator : younes
+* room-creator : didier
 * room-searh : didier
 * talk-editor : raf > . <
 * talk-header : younes
