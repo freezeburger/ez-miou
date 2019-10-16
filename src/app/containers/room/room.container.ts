@@ -1,19 +1,19 @@
 import React from 'react';
 
- class Room extends React.Component{
-     
-    constructor(props:any){
-         super(props);
-     }
+class Room extends React.Component{
+    
+constructor(props:any){
+        super(props);
+    }
 
-     //LifeCycle
-     componentDidMount(){}
+    //LifeCycle
+    componentDidMount(){}
 
-     componentWillUnmount(){}
+    componentWillUnmount(){}
 
-     render(){
-         return '<div>Room</div>'
-     }
- }
+    render(){
+        return '<div>Room</div>'
+    }
+}
 
-
+export default Room;
