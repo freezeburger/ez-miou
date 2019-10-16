@@ -12,8 +12,12 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return '<div>RoomCloud</div>'
+         return (
+         <div>RoomCloud</div>
+         )
      }
  }
+
+ export default RoomCloud;
 
 
