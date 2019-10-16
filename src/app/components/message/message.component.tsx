@@ -14,7 +14,7 @@ export default class Message extends React.Component<MessageProps, any> {
   render() {
     return (
       <div className="message">
-        <span>{this.props.string}</span>
+        <span>{this.props.content}</span>
       </div>
     );
   }
