@@ -10,9 +10,10 @@ const Button = (props: ButtonProps) => {
      */
     const handleClick = () => {
         if (props.action) {
+            //Throw an event for notify the user we clicked
             props.action();
         }else {
-            //Show Notif no action attached
+            //Throw an event to catch
             return;
         }
     }
