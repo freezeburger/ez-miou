@@ -1,3 +1,7 @@
+# Custom 
+public/
+src/index.tsx
+
 # Logs
 logs
 *.log
