@@ -1,5 +1,5 @@
 interface MeProps{
-    name:string;
+    name?:string;
 }
 
 export default MeProps;
