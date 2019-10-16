@@ -1,12 +1,12 @@
 /**
  * Received Message Content 
  */
-interface Message {
+export interface NotifierMessage {
   room: {
     id: string,
     name: string;
   },
-  message: {
+  messageDetail: {
     userName: string,
     message : string
   }
@@ -16,8 +16,8 @@ interface Message {
  * Notifier Component Properties
  */
 interface NotifierProps {
-  messages: Message[], // Messages List 
-  cancel():void, // Function called when the user reject the message
+  messages: NotifierMessage[], // Messages List 
+  cancel(roomId : string):void, // Function called when the user reject the message
   accept(roomId : string): void // Function called when the user wants to see the message 
 }
 
