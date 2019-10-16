@@ -44,13 +44,13 @@ const Button = (props: ButtonProps) => {
 const opts:Options = {
     height: '0',
     width: '0',
-    playerVars: {   
+    playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
       start: 8
     }
 }
 Button.defaultProps = {
-    children:<span>Test<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube></span>,
+    children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
     action:() => {console.log('test')},
     btnTypes: BtnTypes.SUCESS,
     actionOnHover: ()=> {console.log('STOP HOVERING ME YOU PERVERT')},
