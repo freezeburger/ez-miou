@@ -1,6 +1,9 @@
 import React from 'react';
 import ButtonProps from '../@prop-types/button.props';
-
+/**
+ * Button component will show a button
+ * @param props 
+ */
 const Button = (props: ButtonProps) => {
     console.log(props);
     const _defaultClass = ["btn", "btn-dark"];
@@ -20,23 +23,27 @@ const Button = (props: ButtonProps) => {
     /**
      * Tab of overwrite css ClassName
      */
-    let customTabClassName = props.cssClassNames;
-    if (!customTabClassName) {
-        customTabClassName = [];
+    const _generateCustomTabClassNames = ():string[] => {
+        let customTabClassName = props.cssClassNames;
+        if (!customTabClassName) {
+            customTabClassName = [];
+        }
+        return customTabClassName;
     }
-
     /**
      * Generate our className Property if some want to add their custom css
      */
-    let cssClassName: string = "";
-    props.cssClassNames && props.cssClassNames.map((value: string) => {
-        cssClassName += cssClassName + " " + value;
-    })
-    _defaultClass.map((value: string) => {
-        cssClassName += " " + value;
-    })
-    console.log(cssClassName);
-
+    const _generateClassNames = ():string => {
+        _generateCustomTabClassNames();
+        let cssClassNameGenerated: string = "";
+        props.cssClassNames && props.cssClassNames.map((value: string) => {
+            cssClassNameGenerated += cssClassNameGenerated + " " + value;
+        })
+        _defaultClass.map((value: string) => {
+            cssClassNameGenerated += " " + value;
+        })
+        return cssClassNameGenerated;
+    }
 
     /**
      * Define name of the button
@@ -50,7 +57,7 @@ const Button = (props: ButtonProps) => {
     /**
      * Return our component
      */
-    return <div><button className={cssClassName} onClick={handleClick}>{props.icon} {childrenContent}</button></div>
+    return <div><button className={_generateClassNames()} onClick={handleClick}>{props.icon} {childrenContent}</button></div>
 }
 
 export default Button;
