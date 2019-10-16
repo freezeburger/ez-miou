@@ -19,7 +19,7 @@ ReactDOM.render(
     <Button></Button>
     <Avatar />
     <Message
-      date={new Date()}
+      date={12345}
       content='[![](http://img.youtube.com/vi/Bkq1PAyGuZY/0.jpg)](http://www.youtube.com/watch?v=Bkq1PAyGuZY "AAAAAAAAAAAAAAAAAA")'
     ></Message>
   </div>,
