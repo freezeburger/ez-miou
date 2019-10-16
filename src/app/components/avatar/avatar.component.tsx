@@ -1,8 +1,15 @@
 import React from 'react';
 
 interface IProps {
-  size: number;
-  src: string;
+  /**
+   * Size of the avatar
+   * Same width and height
+   */
+  size?: number;
+  /**
+   * Image url used by the avatar
+   */
+  src?: string;
 }
 
 interface IState {
@@ -10,12 +17,12 @@ interface IState {
   src: string;
 }
 export default class Avatar extends React.Component<IProps, IState> {
-  constructor(props: IProps = { size: 50, src: 'https://picsum.photos/50' }) {
+  constructor(props: IProps) {
     super(props);
 
     this.state = {
-      size: props.size,
-      src: props.src
+      size: props.size || 50,
+      src: props.src || 'https://picsum.photos/50'
     };
   }
 
