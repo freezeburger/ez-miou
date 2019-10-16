@@ -1,3 +1,5 @@
+import AppUser from "./app-user";
+import AppRoom from "./app-room";
 
 interface MessageContent {
     message: string; /** message Text */
@@ -6,8 +8,8 @@ interface MessageContent {
 
 interface AppMessage {
     date: number; /** Date of the message (Timestamp) */
-    sender: {}; /** Sender of the message : Pseudo / Avatar */
-    target: {}; /** Room / User */
+    sender: AppUser; /** Sender of the message : Pseudo / Avatar */
+    target: AppRoom; /** Room / User */
     content: MessageContent; /** Content of the message */
 }
 
