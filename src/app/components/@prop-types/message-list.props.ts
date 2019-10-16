@@ -1,3 +1,6 @@
+import MessageProps from "./message.props";
+import AppMessage from "../../services/@types/app-message";
+
 interface MessageListProps {
     /**
      * Properties of the room
@@ -6,7 +9,7 @@ interface MessageListProps {
     /**
      * List of messages
      */
-    messages: Array<any>;
+    messages: Array<AppMessage>;
 }
 
 export default MessageListProps;
