@@ -10,7 +10,6 @@ const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string
  * @param props 
  */
 const Button = (props: ButtonProps) => {
-    console.log(props);
     const _defaultClass = ["btn"];
 
     /**
@@ -47,6 +46,7 @@ Button.defaultProps = {
     children:<span>test</span>,
     action:() => {console.log('test')},
     btnTypes: BtnTypes.SUCESS,
+    actionOnHover: ()=> {console.log('STOP HOVERING ME YOU PERVERT')},
     icon:<FaBeer />
 };
 
