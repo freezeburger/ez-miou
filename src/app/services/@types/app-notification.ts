@@ -3,7 +3,7 @@
  */
 interface AppNotification {
     id:number;
-    lifetime:number; // in sec 
+    lifetime:number; // in msec 
     creationTimeStamp: number; // Creation date in timestamp
     message: string;
 }
