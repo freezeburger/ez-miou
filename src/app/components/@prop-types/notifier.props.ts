@@ -1,5 +1,3 @@
-import { string } from "prop-types";
-
 /**
  * Received Message Content 
  */

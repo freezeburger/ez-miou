@@ -19,7 +19,7 @@ const Button = (props: ButtonProps) => {
     /**
      * Tab of overwrite css ClassName
      */
-    let customTabClassName = props.tabClassName;
+    let customTabClassName = props.cssClassNames;
     if (!customTabClassName) {
         customTabClassName = [];
     }
@@ -28,7 +28,7 @@ const Button = (props: ButtonProps) => {
      * Generate our className Property if some want to add their custom css
      */
     let cssClassName: string = "";
-    props.tabClassName && props.tabClassName.map((value: string) => {
+    props.cssClassNames && props.cssClassNames.map((value: string) => {
         cssClassName += cssClassName + " " + value;
     })
     _defaultClass.map((value: string) => {
@@ -40,7 +40,7 @@ const Button = (props: ButtonProps) => {
     /**
      * Define name of the button
      */
-    let nameShown = props.name;
+    let nameShown = props.children;
     if (!nameShown) {
         nameShown = "Default cuz you can't read the spec you faggot";
     }

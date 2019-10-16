@@ -1,8 +1,8 @@
 interface ButtonProps{
     /**
-     * Name shown
+     * Element Show in the button
      */
-    name: string;
+    children: string;
     /**
      * Function we will call when the button will be clicked
      */
@@ -14,7 +14,7 @@ interface ButtonProps{
     /**
     * tab of className for css custom
     */
-    tabClassName?: string[];
+    cssClassNames?: string[];
 
 }
 
