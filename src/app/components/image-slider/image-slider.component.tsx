@@ -7,7 +7,7 @@ const ImageSlider = (props:ImageSliderProps) => {
 
     const [count,setCount] = useState(0);
 
-    // Moche...
+    // TODO Moche...
     setTimeout( () => {
         setCount((count+1) % 3);
     }, 1500);
