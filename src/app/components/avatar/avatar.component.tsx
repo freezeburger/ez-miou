@@ -14,7 +14,8 @@ class Avatar extends React.Component<AvatarProps, IState> {
   };
 
   state = {
-    loaded: false
+    loaded: false,
+    toto:123
   };
 
   constructor(props: AvatarProps) {
@@ -24,10 +25,8 @@ class Avatar extends React.Component<AvatarProps, IState> {
     this.handleImageLoaded = this.handleImageLoaded.bind(this); */
   }
 
-  handleImageLoaded = ()=>{
-    this.setState({
-      loaded: true
-    });
+  handleImageLoaded = ():void => {
+    this.setState( (prevState, props) => ({loaded: true}) );
   };
 
   render() {
