@@ -1,6 +1,7 @@
 import React from 'react';
+import ButtonProps from '../@prop-types/button.props';
 
-const Button = (props: any) => {
+const Button = (props: ButtonProps) => {
     console.log(props);
 
     const handleClick = () => {
