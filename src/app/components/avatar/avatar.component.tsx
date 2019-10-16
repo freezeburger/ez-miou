@@ -31,7 +31,9 @@ class Avatar extends React.Component<AvatarProps, IState> {
 
   render() {
     const { size, src, rounded } = this.props;
-    var classes = ['avatar', { 'avatar-rounded': rounded, loaded: this.state.loaded }];
+    const {loaded} = this.state;
+    
+    var classes = ['avatar', { 'avatar-rounded': rounded, loaded }];
     return (
       <div
         className={classNames(classes)}
