@@ -1,20 +1,9 @@
+import AppMessage from "./app-message";
+
 interface AppTalk {
 
-    /**
-     * User sending message
-     */
-    currentUser: any;
-    /**
-     * Message object
-     */
-    message: {
-        //message sending date
-        date: Date, 
-        //content of the message
-        content: string
-    };
-    //Room where the message is sent
-    room: any;
+    //List of message
+    listMessage: AppMessage[];
 }
 
 export default AppTalk;
