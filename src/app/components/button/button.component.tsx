@@ -55,9 +55,7 @@ const opts:Options = {
 }
 Button.defaultProps = {
     children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
-    action:() => {console.log('test')},
     btnTypes: BtnTypes.SUCESS,
-    actionOnHover: ()=> {console.log('STOP HOVERING ME YOU PERVERT')},
     icon:<FaBeer />
 };
 
