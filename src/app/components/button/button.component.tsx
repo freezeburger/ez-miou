@@ -56,6 +56,7 @@ const opts:Options = {
 Button.defaultProps = {
     children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
     btnTypes: BtnTypes.SUCESS,
+    action: () => {},
     icon:<FaBeer />
 };
 
