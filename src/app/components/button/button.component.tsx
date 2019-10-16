@@ -3,7 +3,11 @@ import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
 import YouTube, { Options } from 'react-youtube';
 
-
+/**
+ * generate the CSS string we will pass to the classnames attribute.
+ * @param cssClassNames 
+ * @param btnTypes 
+ */
 const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => cssClassNames.reduce( (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes)  || 'btn btn-primary';
 
 /**
