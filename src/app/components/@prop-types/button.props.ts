@@ -9,6 +9,7 @@ interface ButtonProps{
     action: Function;
     /**
      * Icon of the button based on reactIcon
+     * Url : https://react-icons.netlify.com/#/icons/fa
      */
     icon?: React.ReactElement;
     /**
