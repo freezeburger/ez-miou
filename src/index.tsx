@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './app/containers/home/home.container';
 import * as serviceWorker from './serviceWorker';
 import Button from './app/components/button/button.component';
@@ -11,6 +12,7 @@ const data = {
   key: 123456
 };
 
+ReactDOM.render(<Button action={() => {console.log('test')}}></Button>, document.getElementById('root'));
 ReactDOM.render(
   <Me title="Hello World" age="42" user={data}>
     <input />
