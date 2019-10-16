@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonProps from '../@prop-types/button.props';
+import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
 /**
  * Button component will show a button
@@ -7,7 +7,7 @@ import { FaBeer } from 'react-icons/fa';
  */
 const Button = (props: ButtonProps) => {
     console.log(props);
-    const _defaultClass = ["btn", "btn-dark"];
+    const _defaultClass = ["btn"];
 
     /**
      * Function will handle click
@@ -43,6 +43,7 @@ const Button = (props: ButtonProps) => {
         _defaultClass.map((value: string) => {
             cssClassNameGenerated += " " + value;
         })
+        cssClassNameGenerated += " " + props.btnTypes;
         return cssClassNameGenerated;
     }
 
@@ -64,6 +65,7 @@ const Button = (props: ButtonProps) => {
 Button.defaultProps = {
     children:<h2>test</h2>,
     action:() => {console.log('test')},
+    btnTypes: BtnTypes.SUCESS,
     icon:<FaBeer />
 };
 
