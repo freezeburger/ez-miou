@@ -2,7 +2,7 @@ export default interface MessageProps {
   /**
    * Text of the message
    */
-  string: string;
+  content: string;
   /**
    * Date when the message was posted
    */
