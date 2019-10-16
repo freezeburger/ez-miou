@@ -5,7 +5,7 @@ import AppMessage from '../../services/@types/app-message';
 import './message-list.scss';
 
 const MessageList = (props:MessageListProps) => {
-    console.log(props); //readonly
+    //console.log(props);
     let content:any = [];
     props.messages.forEach(function(value:AppMessage) {
         content.push(

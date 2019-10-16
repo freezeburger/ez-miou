@@ -3,7 +3,11 @@ import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
 import YouTube, { Options } from 'react-youtube';
 
-
+/**
+ * generate the CSS string we will pass to the classnames attribute.
+ * @param cssClassNames 
+ * @param btnTypes 
+ */
 const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => cssClassNames.reduce( (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes)  || 'btn btn-primary';
 
 /**
@@ -44,16 +48,14 @@ const Button = (props: ButtonProps) => {
 const opts:Options = {
     height: '0',
     width: '0',
-    playerVars: {   
+    playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
       start: 8
     }
 }
 Button.defaultProps = {
-    children:<span>Test<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube></span>,
-    action:() => {console.log('test')},
+    children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
     btnTypes: BtnTypes.SUCESS,
-    actionOnHover: ()=> {console.log('STOP HOVERING ME YOU PERVERT')},
     icon:<FaBeer />
 };
 
