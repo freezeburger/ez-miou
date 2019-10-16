@@ -8,7 +8,11 @@ import YouTube, { Options } from 'react-youtube';
  * @param cssClassNames 
  * @param btnTypes 
  */
-const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => cssClassNames.reduce( (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes)  || 'btn btn-primary';
+const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => {
+ return cssClassNames.reduce( 
+     (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes
+    )  || 'btn btn-primary';
+}
 
 /**
  * Button component will show a button
@@ -36,13 +40,15 @@ const Button = (props: ButtonProps) => {
     /**
      * Return our component
      */
-    return <button 
-    className={getClassNames(props.cssClassNames, props.btnTypes)} 
-    onClick={handleClick} 
-    onMouseEnter={onHover}
-    >
-        {props.icon} {props.children || <p> Default cuz you can't read the spec you faggot </p>}
-    </button>
+    return (
+        <button 
+        className={getClassNames(props.cssClassNames, props.btnTypes)} 
+        onClick={handleClick} 
+        onMouseEnter={onHover}
+        >
+        {props.icon} { props.children || <p> Default cuz you can't read the spec you faggot </p> }
+     </button>
+    )
 }
 
 const opts:Options = {
