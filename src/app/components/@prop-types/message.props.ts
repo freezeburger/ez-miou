@@ -1,5 +1,9 @@
 interface MessageProps {
   /**
+   * Message id
+   */
+  id?: string;
+  /**
    * Text of the message
    */
   content: string;
