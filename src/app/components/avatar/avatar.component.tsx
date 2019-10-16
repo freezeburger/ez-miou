@@ -1,11 +1,12 @@
 import React from 'react';
 import AvatarProps from '../@prop-types/avatar.props';
+import "./avatar.scss";
 
 interface IState {
   size: number;
   src: string;
 }
-export default class Avatar extends React.Component<AvatarProps, IState> {
+class Avatar extends React.Component<AvatarProps, IState> {
   constructor(props: AvatarProps) {
     super(props);
 
@@ -34,3 +35,5 @@ export default class Avatar extends React.Component<AvatarProps, IState> {
     );
   }
 }
+
+export default Avatar;
