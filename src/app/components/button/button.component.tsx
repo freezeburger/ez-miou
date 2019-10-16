@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
+import YouTube, { Options } from 'react-youtube';
 
 
 const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => cssClassNames.reduce( (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes)  || 'btn btn-primary';
@@ -40,13 +41,21 @@ const Button = (props: ButtonProps) => {
     </button>
 }
 
+const opts:Options = {
+    height: '0',
+    width: '0',
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 1
+    }
+}
 Button.defaultProps = {
-    children:<span>test</span>,
+    children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
     action:() => {console.log('test')},
     btnTypes: BtnTypes.SUCESS,
     actionOnHover: ()=> {console.log('STOP HOVERING ME YOU PERVERT')},
     icon:<FaBeer />
 };
+
 
 export default Button;
 
