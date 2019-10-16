@@ -26,6 +26,12 @@
 ## Fonctionnalities
 
 * User
+* Message
+* Room
+* Talk
+* Notification
+
+* User
     * signin
     * signup
     * signout
