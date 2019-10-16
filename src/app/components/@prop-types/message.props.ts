@@ -1,4 +1,4 @@
-export default interface MessageProps {
+interface MessageProps {
   /**
    * Text of the message
    */
@@ -8,3 +8,5 @@ export default interface MessageProps {
    */
   date: Date;
 }
+
+export default MessageProps;

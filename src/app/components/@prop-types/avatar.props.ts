@@ -1,4 +1,4 @@
-export default interface AvatarProps {
+interface AvatarProps {
   /**
    * Size of the avatar
    * Same width and height
@@ -8,4 +8,10 @@ export default interface AvatarProps {
    * Image url used by the avatar
    */
   src?: string;
+  /**
+   * Wether or not the avatar should be rounded
+   */
+  rounded?: boolean;
 }
+
+export default AvatarProps;
