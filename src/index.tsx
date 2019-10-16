@@ -12,7 +12,7 @@ const data = {
   key: 123456
 };
 
-ReactDOM.render(<Button action={() => {console.log('test')}}></Button>, document.getElementById('root'));
+ReactDOM.render(<Button name="toto" action={() => {console.log('test')}}></Button>, document.getElementById('root'));
 ReactDOM.render(
   <Me title="Hello World" age="42" user={data}>
     <input />
