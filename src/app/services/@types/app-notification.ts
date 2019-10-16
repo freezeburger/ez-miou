@@ -1,10 +1,18 @@
 /**
  * Notification Service
+ * 
  */
 interface AppNotification {
+    /** internal identifier, unique */
     id:number;
-    lifetime:number; // in msec 
-    creationTimeStamp: number; // Creation date in timestamp
+
+    /** in msec */
+    lifetime:number;  
+
+    /** Creation date in timestamp */
+    creationTimeStamp: number; 
+
+    /** any string... */
     message: string;
 }
 
