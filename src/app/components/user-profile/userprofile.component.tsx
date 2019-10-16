@@ -64,11 +64,7 @@ export const UserProfile = (props: UserProps) => {
             </div>
         </div>
     </div>
-    <div className="col-md-9">
-        <div className="profile-content">
-           Some user related content goes here...
-        </div>
-    </div>
+
 </div>
     );
 }
