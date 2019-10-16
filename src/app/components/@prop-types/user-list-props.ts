@@ -1,5 +1,8 @@
+import AppUser from "../../services/@types/app-user";
+
+
 export interface UserListProps {
-    userList : any [];
+    userList : AppUser[];
 }
 
 export default UserListProps;
