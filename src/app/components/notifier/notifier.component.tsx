@@ -1,7 +1,7 @@
 import React, { ReactChild } from 'react';
-import notifierProps from '../@prop-types/notifier.props';
+import NotifierProps from '../@prop-types/notifier.props';
 
- const Notifier = (props: notifierProps) => {
+ const Notifier = (props: NotifierProps) => {
      console.log(props);
      return <div>Notifier</div>;
  };

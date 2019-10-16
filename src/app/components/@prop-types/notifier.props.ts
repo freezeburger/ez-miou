@@ -3,7 +3,7 @@ import { string } from "prop-types";
 /**
  * Received Message Content 
  */
-interface message {
+interface Message {
   room: {
     id: string,
     name: string;
@@ -17,10 +17,10 @@ interface message {
 /**
  * Notifier Component Properties
  */
-interface notifierProps {
-  messages: message[], // Messages List 
+interface NotifierProps {
+  messages: Message[], // Messages List 
   cancel():void, // Function called when the user reject the message
   accept(roomId : string): void // Function called when the user wants to see the message 
 }
 
-export default notifierProps;
+export default NotifierProps;
