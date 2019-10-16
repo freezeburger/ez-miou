@@ -6,6 +6,11 @@ import AppUser from "./app-user";
  */
 interface AppRoom {
     /**
+     * Identifier of the room
+     */
+    id: string;
+
+    /**
      * Name of the room
      */
     name: string;
