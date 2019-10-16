@@ -1,5 +1,6 @@
 import React from 'react';
 import ButtonProps from '../@prop-types/button.props';
+import { FaBeer } from 'react-icons/fa';
 /**
  * Button component will show a button
  * @param props 
@@ -59,6 +60,12 @@ const Button = (props: ButtonProps) => {
      */
     return <div><button className={_generateClassNames()} onClick={handleClick}>{props.icon} {childrenContent}</button></div>
 }
+
+Button.defaultProps = {
+    children:<h2>test</h2>,
+    action:() => {console.log('test')},
+    icon:<FaBeer />
+};
 
 export default Button;
 
