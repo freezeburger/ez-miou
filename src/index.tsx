@@ -6,6 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import Button from './app/components/button/button.component';
 import Me from './app/components/me/me.component';
 
+const data = {
+    key: 123456
+}
+
 ReactDOM.render(<Me title="Hello World" age="42" user={data}><input/></Me>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
