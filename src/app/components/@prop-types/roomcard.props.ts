@@ -1,4 +1,4 @@
-export interface RoomCardProps {
+interface RoomCardProps {
     // room card title
     title: string;
     user: {
