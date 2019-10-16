@@ -1,11 +1,9 @@
-import { IconType } from "react-icons/lib/cjs/iconBase";
-
 interface ButtonProps{
     name: string;
     action: Function;
     width?: number;
     height?: number;
-    icon?: IconType;
+    icon?: JSX.Element;
 }
 
 export default ButtonProps;

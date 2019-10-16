@@ -7,17 +7,21 @@ import * as serviceWorker from './serviceWorker';
 import Button from './app/components/button/button.component';
 import Me from './app/components/me/me.component';
 import Avatar from './app/components/avatar/avatar.component';
+import { FaBeer } from 'react-icons/fa';
 
 const data = {
   key: 123456
 };
 
-ReactDOM.render(<Button name="toto" action={() => {console.log('test')}}></Button>, document.getElementById('root'));
 ReactDOM.render(
-  <Me title="Hello World" age="42" user={data}>
-    <input />
-    <Avatar size={50} src={'dd'} />
-  </Me>,
+    <div>
+        <Me title="Hello World" age="42" user={data}>
+            <input />
+            <Avatar size={50} src={'dd'} />
+        </Me>
+        <Button name="test" action={() => {console.log('test')}} icon={<FaBeer />}></Button>
+    </div>
+  ,
   document.getElementById('root')
 );
 

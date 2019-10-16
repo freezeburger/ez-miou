@@ -23,7 +23,7 @@ const Button = (props: ButtonProps) => {
     if (!nameShown) {
         nameShown = "Default cuz you can't read the spec you faggot";
     }
-    return <div><button className="btn btn-dark" onClick={handleClick}>{props.icon}{nameShown}</button></div>
+    return <div><button className="btn btn-dark" onClick={handleClick}>{props.icon} {nameShown}</button></div>
 }
 
 export default Button;
