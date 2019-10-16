@@ -3,7 +3,7 @@ interface ButtonProps{
     action: Function;
     width?: number;
     height?: number;
-    icon?: string;
+    icon?: JSX.Element;
 }
 
 export default ButtonProps;
