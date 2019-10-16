@@ -1,12 +1,8 @@
 interface AppTalk {
 
-    /**
-     * User sending message
-     */
+    // User sending message
     currentUser: any;
-    /**
-     * Message object
-     */
+    //  Message object
     message: {
         //message sending date
         date: Date, 
