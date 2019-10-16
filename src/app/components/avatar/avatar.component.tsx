@@ -14,35 +14,40 @@ class Avatar extends React.Component<AvatarProps, IState> {
   };
 
   state = {
-    loaded: false
+    loaded: false,
+    toto: 123
   };
 
   constructor(props: AvatarProps) {
     super(props);
-/* 
+    /* 
     this.handleImageLoaded = Avatar.prototype.handleImageLoaded.bind(this);
     this.handleImageLoaded = this.handleImageLoaded.bind(this); */
   }
 
-  handleImageLoaded = ()=>{
-    this.setState({
-      loaded: true
-    });
+  handleImageLoaded = (): void => {
+    this.setState((prevState, props) => ({ loaded: true }));
   };
 
   render() {
     const { size, src, rounded } = this.props;
-    var classes = ['avatar', { 'avatar-rounded': rounded, loaded: this.state.loaded }];
+    const { loaded } = this.state;
+    const styles = {
+      width: size + 'px',
+      height: size + 'px'
+    };
+
+    var classes = ['avatar', { 'avatar-rounded': rounded, loaded }];
     return (
       <div
         className={classNames(classes)}
-        style={{
-          width: size + 'px',
-          height: size + 'px'
-        }}
+        style={styles}
       >
         <img src={src} alt="avatar" onLoad={this.handleImageLoaded} />
-        <div className="avatar-img" style={{ backgroundImage: `url(${src})` }}></div>
+        <div
+          className="avatar-img"
+          style={{ backgroundImage: `url(${src})` }}
+        ></div>
       </div>
     );
   }
