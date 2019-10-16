@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RoomCard from './app/components/room-card/roomcard.component';
+import Avatar from './app/components/avatar/avatar.component';
+import Message from './app/components/message/message.component';
 
 const data = {
   key: 123456
@@ -11,6 +13,8 @@ const data = {
 ReactDOM.render(
   <div>
     <RoomCard></RoomCard>
+    <Avatar />
+    <Message date={new Date()} content="HELLO *Gaysou*"></Message>
   </div>,
   document.getElementById('root')
 );
