@@ -8,13 +8,32 @@ interface ButtonProps{
      */
     action: Function;
     /**
+     * Function we will call when hovering the button
+     */
+    actionOnHover?: Function;
+    /**
      * Icon of the button based on reactIcon
+     * Url : https://react-icons.netlify.com/#/icons/fa
      */
     icon?: React.ReactElement;
     /**
     * tab of className for css custom
     */
     cssClassNames?: string[];
+    /**
+     * Type of the button
+     */
+    btnTypes?: BtnTypes;
+
+}
+
+export enum BtnTypes{
+    PRIMARY= 'btn-primary',
+    SECONDARY= 'btn-secondary',
+    SUCESS= 'btn-success',
+    DANGER= 'btn-danger',
+    WARNING= 'btn-warning',
+    INFO= 'btn-info',
 
 }
 

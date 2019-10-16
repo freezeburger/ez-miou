@@ -2,26 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './app/containers/home/home.container';
-import * as serviceWorker from './serviceWorker';
-import Button from './app/components/button/button.component';
-import Me from './app/components/me/me.component';
+import RoomCard from './app/components/room-card/roomcard.component';
+import UserProfile from './app/components/user-profile/userprofile.component';
 import Avatar from './app/components/avatar/avatar.component';
-import { FaBeer } from 'react-icons/fa';
+import Message from './app/components/message/message.component';
+import Button from './app/components/button/button.component';
 
 const data = {
   key: 123456
 };
 
 ReactDOM.render(
-    <div>
-        <Me title="Hello World" age="42" user={data}>
-            <input />
-            <Avatar size={50} src={'dd'} />
-        </Me>
-        <Button children={<h2>test</h2>} action={() => {console.log('test')}} icon={<FaBeer />}></Button>
-    </div>
-  ,
+  <div>
+    <UserProfile></UserProfile>
+    <RoomCard></RoomCard>
+    <Button></Button>
+    <Avatar />
+    <Message
+      date={12345}
+      content='[![](http://img.youtube.com/vi/Bkq1PAyGuZY/0.jpg)](http://www.youtube.com/watch?v=Bkq1PAyGuZY "AAAAAAAAAAAAAAAAAA")'
+    ></Message>
+  </div>,
   document.getElementById('root')
 );
 

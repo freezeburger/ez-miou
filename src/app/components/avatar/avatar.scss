@@ -1,5 +1,31 @@
 .avatar {
-  &.rounded {
-    border-radius: 50%;
+  border: 2px #000 solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  position: relative;
+
+  .avatar-img {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition-duration: 0.3s;
+  }
+
+  img {
+    display: none;
+  }
+
+  &.avatar-rounded {
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  &.loaded {
+    .avatar-img {
+      opacity: 1;
+    }
   }
 }
