@@ -1,23 +1,11 @@
 import React from 'react';
+import RoomCloudProps from '../@prop-types/roomCloud.props';
 
- class RoomCloud extends React.Component{
-     
-    constructor(props:any){
-         super(props);
-     }
-
-     //LifeCycle
-     componentDidMount(){}
-
-     componentWillUnmount(){}
-
-     render(){
-         return (
-         <div>RoomCloud</div>
-         )
-     }
- }
+ const RoomCloud = (props: RoomCloudProps) => {
+   return (<div>RoomCloud</div>);
+ };
 
  export default RoomCloud;
+
 
 
