@@ -1,5 +1,15 @@
-export default interface User {
+export enum AppUserStatus {
+    ONLINE,
+    OFFLINE,
+    BUSY,
+    AWAY
+}
+
+interface AppUser {
+    id:number;
     name: string;
     avatarUrl: string;
-    status: string;
+    status: AppUserStatus;
 }
+
+export default AppUser;
