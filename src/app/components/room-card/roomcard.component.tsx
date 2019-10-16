@@ -1,5 +1,5 @@
 import React from 'react';
-import RoomCardProps from '../@prop-types/roomcard.props';
+import RoomCardProps from '../@prop-types/room-card.props';
 
 const RoomCard = (props: RoomCardProps) => {
     return (
