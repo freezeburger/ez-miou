@@ -1,10 +1,10 @@
 export interface RoomCardProps {
     // room card title
     title: string;
-    // number of user in room
-    userCounter: number;
-    // maximum user in room
-    maxUser?: number;
+    user: {
+        counter: number, // number of user in room
+        max?: number // maximum user in room
+    };
     // room color
     color?: string;
 }
