@@ -1,7 +1,9 @@
+import AppUser from "../../services/@types/app-user";
+
 /**
  * Talk editor props interface
  */
 export default interface TalkEditorProps {
-    userList: any[]; // List of users
-    emojiList: any[]; // List of emoji
+    userList?: AppUser[]; // List of users
+    emojiList?: any[]; // List of emoji
 } 
