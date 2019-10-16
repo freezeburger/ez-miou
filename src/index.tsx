@@ -14,7 +14,7 @@ const data = {
 ReactDOM.render(
   <Me title="Hello World" age="42" user={data}>
     <input />
-    <Avatar size={50} src={'dd'} />
+    <Avatar />
   </Me>,
   document.getElementById('root')
 );
