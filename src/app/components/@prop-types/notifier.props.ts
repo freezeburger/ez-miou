@@ -1,6 +1,6 @@
 import { string } from "prop-types";
 
-interface NotifierProps {
+interface notifierProps {
   messages: {
     room: {
       id: string,
@@ -15,4 +15,4 @@ interface NotifierProps {
   accept(roomId : string): void // Function called when the user wants to see the message 
 }
 
-export default NotifierProps;
+export default notifierProps;
