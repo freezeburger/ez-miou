@@ -1,5 +1,5 @@
 import React, { ReactChild } from 'react';
-import NotifierProps from '../../@prop-types/notifier.props';
+import NotifierProps from '../@prop-types/notifier.props';
 
  const Notifier = (props: NotifierProps) => {
      console.log(props);
