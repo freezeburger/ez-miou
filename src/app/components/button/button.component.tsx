@@ -58,7 +58,7 @@ const Button = (props: ButtonProps) => {
     /**
      * Return our component
      */
-    return <div><button className={_generateClassNames()} onClick={handleClick}>{props.icon} {childrenContent}</button></div>
+    return <button className={_generateClassNames()} onClick={handleClick}>{props.icon} {childrenContent}</button>
 }
 
 Button.defaultProps = {
