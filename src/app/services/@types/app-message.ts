@@ -1,7 +1,7 @@
 
 interface MessageContent {
     message: string; /** message Text */
-    joins: any; /** attached documents */
+    joins?: any; /** attached documents */
 }
 
 interface AppMessage {
