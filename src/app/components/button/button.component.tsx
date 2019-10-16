@@ -17,7 +17,7 @@ const Button = (props: ButtonProps) => {
         }
     }
     /**
-     * Define the custom class
+     * Tab of overwrite css ClassName
      */
     let customTabClassName = props.tabClassName;
     if (!customTabClassName) {
@@ -44,6 +44,11 @@ const Button = (props: ButtonProps) => {
     if (!nameShown) {
         nameShown = "Default cuz you can't read the spec you faggot";
     }
+
+
+    /**
+     * Return our component
+     */
     return <div><button className={cssClassName} onClick={handleClick}>{props.icon} {nameShown}</button></div>
 }
 
