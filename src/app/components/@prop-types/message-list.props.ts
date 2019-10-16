@@ -1,6 +1,14 @@
+import Message from "../message/message.component";
+
 export interface MessageListProps {
-    room: any,
-    messages: [{}]
+    /**
+     * Properties of the room
+     */
+    room: {};
+    /**
+     * List of messages
+     */
+    messages: Array<Message>;
 }
 
 export default MessageListProps;
