@@ -4,8 +4,7 @@ import './index.css';
 import Home from './app/containers/home/home.container';
 import * as serviceWorker from './serviceWorker';
 import Button from './app/components/button/button.component';
-
-ReactDOM.render(<Button name="tututu" color="red" />, document.getElementById('root'));
+import Me from './app/components/me/me.component';
 
 ReactDOM.render(<Me title="Hello World" age="42" user={data}><input/></Me>, document.getElementById('root'));
 
