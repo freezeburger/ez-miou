@@ -15,10 +15,6 @@ const data = {
 
 ReactDOM.render(
     <div>
-        <Me title="Hello World" age="42" user={data}>
-            <input />
-            <Avatar size={50} src={'dd'} />
-        </Me>
         <Button ></Button>
     </div>
   ,
