@@ -1,6 +1,7 @@
 import React from 'react';
 import AvatarProps from '../@prop-types/avatar.props';
 import './avatar.scss';
+import classNames from 'classnames';
 
 interface IState {
   loaded: boolean;
@@ -19,11 +20,6 @@ class Avatar extends React.Component<AvatarProps, IState> {
     };
   }
 
-  //LifeCycle
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
   handleImageLoaded = () => {
     this.setState({
       loaded: true
@@ -32,9 +28,10 @@ class Avatar extends React.Component<AvatarProps, IState> {
 
   render() {
     const { size, src, rounded } = this.props;
+    var classes = ['avatar', { 'avatar-rounded': rounded, loaded: this.state.loaded }];
     return (
       <div
-        className={`avatar ${rounded ? 'avatar-rounded' : ''} ${rounded ? 'loaded' : 'loading'}`}
+        className={classNames(classes)}
         style={{
           width: size + 'px',
           height: size + 'px'
