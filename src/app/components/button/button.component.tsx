@@ -3,6 +3,7 @@ import ButtonProps from '../@prop-types/button.props';
 
 const Button = (props: ButtonProps) => {
     console.log(props);
+    const _defaultClass = ["btn", "btn-dark"];
 
     /**
      * Function will handle click
@@ -15,6 +16,26 @@ const Button = (props: ButtonProps) => {
             return;
         }
     }
+    /**
+     * Tab of overwrite css ClassName
+     */
+    let customTabClassName = props.tabClassName;
+    if (!customTabClassName) {
+        customTabClassName = [];
+    }
+
+    /**
+     * Generate our className Property if some want to add their custom css
+     */
+    let cssClassName: string = "";
+    props.tabClassName && props.tabClassName.map((value: string) => {
+        cssClassName += cssClassName + " " + value;
+    })
+    _defaultClass.map((value: string) => {
+        cssClassName += " " + value;
+    })
+    console.log(cssClassName);
+
 
     /**
      * Define name of the button
@@ -23,7 +44,12 @@ const Button = (props: ButtonProps) => {
     if (!nameShown) {
         nameShown = "Default cuz you can't read the spec you faggot";
     }
-    return <div><button className="btn btn-dark" onClick={handleClick}>{props.icon} {nameShown}</button></div>
+
+
+    /**
+     * Return our component
+     */
+    return <div><button className={cssClassName} onClick={handleClick}>{props.icon} {nameShown}</button></div>
 }
 
 export default Button;

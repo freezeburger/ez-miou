@@ -8,21 +8,13 @@ interface ButtonProps{
      */
     action: Function;
     /**
-     * Width of the button
-     */
-    width?: number;
-    /**
-     * Height of the button
-     */
-    height?: number;
-    /**
      * Icon of the button based on reactIcon
      */
     icon?: JSX.Element;
     /**
     * tab of className for css custom
     */
-   tabClassName?: string[];
+    tabClassName?: string[];
 
 }
 
