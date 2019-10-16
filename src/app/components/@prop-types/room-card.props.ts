@@ -7,6 +7,8 @@ interface RoomCardProps {
     };
     // room color
     color?: string;
+    // handle click on room card to show room
+    action?:Function;
 }
 
 export default RoomCardProps;
