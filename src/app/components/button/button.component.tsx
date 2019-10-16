@@ -1,14 +1,16 @@
 import React from 'react';
 import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
+import YouTube, { Options } from 'react-youtube';
+
+
+const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => cssClassNames.reduce( (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes)  || 'btn btn-primary';
+
 /**
  * Button component will show a button
  * @param props 
  */
 const Button = (props: ButtonProps) => {
-    console.log(props);
-    const _defaultClass = ["btn"];
-
     /**
      * Function will handle click
      */
@@ -21,53 +23,39 @@ const Button = (props: ButtonProps) => {
             return;
         }
     }
-    /**
-     * Tab of overwrite css ClassName
-     */
-    const _generateCustomTabClassNames = ():string[] => {
-        let customTabClassName = props.cssClassNames;
-        if (!customTabClassName) {
-            customTabClassName = [];
-        }
-        return customTabClassName;
-    }
-    /**
-     * Generate our className Property if some want to add their custom css
-     */
-    const _generateClassNames = ():string => {
-        _generateCustomTabClassNames();
-        let cssClassNameGenerated: string = "";
-        props.cssClassNames && props.cssClassNames.map((value: string) => {
-            cssClassNameGenerated += cssClassNameGenerated + " " + value;
-        })
-        _defaultClass.map((value: string) => {
-            cssClassNameGenerated += " " + value;
-        })
-        cssClassNameGenerated += " " + props.btnTypes;
-        return cssClassNameGenerated;
-    }
 
-    /**
-     * Define name of the button
-     */
-    let childrenContent = props.children;
-    if (!childrenContent) {
-        childrenContent = <p> Default cuz you can't read the spec you faggot </p>;
+    const onHover = () => {
+        props.actionOnHover && props.actionOnHover();
     }
 
 
     /**
      * Return our component
      */
-    return <button className={_generateClassNames()} onClick={handleClick}>{props.icon} {childrenContent}</button>
+    return <button 
+    className={getClassNames(props.cssClassNames, props.btnTypes)} 
+    onClick={handleClick} 
+    onMouseEnter={onHover}
+    >
+        {props.icon} {props.children || <p> Default cuz you can't read the spec you faggot </p>}
+    </button>
 }
 
+const opts:Options = {
+    height: '0',
+    width: '0',
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 1
+    }
+}
 Button.defaultProps = {
-    children:<h2>test</h2>,
+    children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
     action:() => {console.log('test')},
     btnTypes: BtnTypes.SUCESS,
+    actionOnHover: ()=> {console.log('STOP HOVERING ME YOU PERVERT')},
     icon:<FaBeer />
 };
+
 
 export default Button;
 
