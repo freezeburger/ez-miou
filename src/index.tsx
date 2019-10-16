@@ -8,6 +8,7 @@ import Button from './app/components/button/button.component';
 import Me from './app/components/me/me.component';
 import Avatar from './app/components/avatar/avatar.component';
 import { FaBeer } from 'react-icons/fa';
+import RoomCard from './app/components/room-card/roomcard.component';
 
 const data = {
   key: 123456
@@ -15,7 +16,7 @@ const data = {
 
 ReactDOM.render(
     <div>
-        <Button ></Button>
+        <RoomCard ></RoomCard>
     </div>
   ,
   document.getElementById('root')
