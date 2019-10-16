@@ -1,23 +1,12 @@
 import React from 'react';
-
-interface IProps {
-  /**
-   * Size of the avatar
-   * Same width and height
-   */
-  size?: number;
-  /**
-   * Image url used by the avatar
-   */
-  src?: string;
-}
+import AvatarProps from '../@prop-types/avatar.props';
 
 interface IState {
   size: number;
   src: string;
 }
-export default class Avatar extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export default class Avatar extends React.Component<AvatarProps, IState> {
+  constructor(props: AvatarProps) {
     super(props);
 
     this.state = {
