@@ -8,6 +8,10 @@ interface ButtonProps{
      */
     action: Function;
     /**
+     * Function we will call when hovering the button
+     */
+    actionOnHover?: Function;
+    /**
      * Icon of the button based on reactIcon
      * Url : https://react-icons.netlify.com/#/icons/fa
      */
