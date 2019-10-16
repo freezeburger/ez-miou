@@ -4,21 +4,26 @@ import defaultProps from './messagelist.default-props';
 import AppMessage from '../../services/@types/app-message';
 import './message-list.scss';
 
-const MessageList = (props:MessageListProps) => {
-    //console.log(props);
-    let content:any = [];
-    props.messages.forEach(function(value:AppMessage) {
-        content.push(
-            <li className="list-group-item message-item">
-                <div className="msg-sender">{ value.sender.name }</div>
-                <div className="msg-date">{ value.date }</div>
-                <div className="msg-message">{ value.content.message }</div>
-            </li>
-        );
-    });
+const Message = (props:any) => (
+    <li className="list-group-item message-item">
+        <div className="msg-sender">{ props.sender.name }</div>
+        <div className="msg-date">{ props.date }</div>
+        <div className="msg-message">{ props.content.message }</div>
+    </li>
+)
 
-    return (<ul className="list-group message-list">{ content }</ul>)
+const MessageList = (props:MessageListProps) => {
+
+    return (
+        <ul className="list-group message-list">
+        { 
+        props.messages.map( msg =>  <Message {...msg}/>)
+        }
+        </ul>
+     )
 }
+
+
 
 MessageList.defaultProps = defaultProps;
 
