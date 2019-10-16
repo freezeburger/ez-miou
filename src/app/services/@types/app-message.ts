@@ -9,6 +9,8 @@ export interface MessageContent {
 }
 
 interface AppMessage {
+    /** ID of the message */
+    messageId?: number;
     /** Date of the message (Timestamp) */
     date: number;
     /** Sender ID */
