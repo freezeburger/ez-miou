@@ -19,9 +19,12 @@ class Avatar extends React.Component<AvatarProps, IState> {
 
   constructor(props: AvatarProps) {
     super(props);
+/* 
+    this.handleImageLoaded = Avatar.prototype.handleImageLoaded.bind(this);
+    this.handleImageLoaded = this.handleImageLoaded.bind(this); */
   }
 
-  handleImageLoaded = () => {
+  handleImageLoaded(){
     this.setState({
       loaded: true
     });
