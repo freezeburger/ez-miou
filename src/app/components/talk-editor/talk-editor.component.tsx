@@ -6,5 +6,3 @@ const TalkEditor = (props: TalkEditorProps) => {
         <div>TalkEditor</div>
     );
 };
-
-
