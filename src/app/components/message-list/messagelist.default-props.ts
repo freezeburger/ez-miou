@@ -2,7 +2,6 @@ import MessageListProps from "../@prop-types/message-list.props";
 import { AppUserStatus } from "../../services/@types/app-user";
 
 const defaultProps:MessageListProps = {
-    room: {},
     messages: [
         {
             date: 123,
