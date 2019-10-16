@@ -40,16 +40,16 @@ const Button = (props: ButtonProps) => {
     /**
      * Define name of the button
      */
-    let nameShown = props.children;
-    if (!nameShown) {
-        nameShown = "Default cuz you can't read the spec you faggot";
+    let childrenContent = props.children;
+    if (!childrenContent) {
+        childrenContent = <p> Default cuz you can't read the spec you faggot </p>;
     }
 
 
     /**
      * Return our component
      */
-    return <div><button className={cssClassName} onClick={handleClick}>{props.icon} {nameShown}</button></div>
+    return <div><button className={cssClassName} onClick={handleClick}>{props.icon} {childrenContent}</button></div>
 }
 
 export default Button;
