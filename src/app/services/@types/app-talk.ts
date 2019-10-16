@@ -1,7 +1,9 @@
+import AppMessage from "./app-message";
+
 interface AppTalk {
 
     //List of message
-    listMessage: any[];
+    listMessage: AppMessage[];
 }
 
 export default AppTalk;
