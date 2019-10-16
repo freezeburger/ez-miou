@@ -1,5 +1,6 @@
 import React from 'react';
 import MeProps from '../@prop-types/me.props';
+import defaultProps from './me.default-props';
 
 export const Me = (props: MeProps) => {
   return (
@@ -8,8 +9,7 @@ export const Me = (props: MeProps) => {
      </div>
   );
 };
-Me.defaultProps = {
-  name:'Hello'
-}
+
+Me.defaultProps = defaultProps;
 
 export default Me;
