@@ -13,7 +13,7 @@ interface RoomSearchProps {
      * function may process the user input (open the room, store
      * his input in some history...)
      */
-    onSearchCompleted(roomName: string): Function;
+    onSearchCompleted(roomName: string): void;
 }
 
 export default RoomSearchProps;
