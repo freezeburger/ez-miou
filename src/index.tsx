@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RoomCard from './app/components/room-card/roomcard.component';
+import Button from './app/components/button/button.component';
 
 const data = {
   key: 123456
@@ -11,6 +12,7 @@ const data = {
 ReactDOM.render(
   <div>
     <RoomCard></RoomCard>
+    <Button></Button>
   </div>,
   document.getElementById('root')
 );

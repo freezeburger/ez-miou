@@ -1,6 +1,10 @@
 import React from 'react';
 import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
+
+
+const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => cssClassNames.reduce( (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes)  || 'btn btn-primary';
+
 /**
  * Button component will show a button
  * @param props 
@@ -21,49 +25,26 @@ const Button = (props: ButtonProps) => {
             return;
         }
     }
-    /**
-     * Tab of overwrite css ClassName
-     */
-    const _generateCustomTabClassNames = ():string[] => {
-        let customTabClassName = props.cssClassNames;
-        if (!customTabClassName) {
-            customTabClassName = [];
-        }
-        return customTabClassName;
-    }
-    /**
-     * Generate our className Property if some want to add their custom css
-     */
-    const _generateClassNames = ():string => {
-        _generateCustomTabClassNames();
-        let cssClassNameGenerated: string = "";
-        props.cssClassNames && props.cssClassNames.map((value: string) => {
-            cssClassNameGenerated += cssClassNameGenerated + " " + value;
-        })
-        _defaultClass.map((value: string) => {
-            cssClassNameGenerated += " " + value;
-        })
-        cssClassNameGenerated += " " + props.btnTypes;
-        return cssClassNameGenerated;
-    }
 
-    /**
-     * Define name of the button
-     */
-    let childrenContent = props.children;
-    if (!childrenContent) {
-        childrenContent = <p> Default cuz you can't read the spec you faggot </p>;
+    const onHover = () => {
+        props.actionOnHover && props.actionOnHover();
     }
 
 
     /**
      * Return our component
      */
-    return <button className={_generateClassNames()} onClick={handleClick}>{props.icon} {childrenContent}</button>
+    return <button 
+    className={getClassNames(props.cssClassNames, props.btnTypes)} 
+    onClick={handleClick} 
+    onMouseEnter={onHover}
+    >
+        {props.icon} {props.children || <p> Default cuz you can't read the spec you faggot </p>}
+    </button>
 }
 
 Button.defaultProps = {
-    children:<h2>test</h2>,
+    children:<span>test</span>,
     action:() => {console.log('test')},
     btnTypes: BtnTypes.SUCESS,
     icon:<FaBeer />
