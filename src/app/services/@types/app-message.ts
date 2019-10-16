@@ -1,16 +1,23 @@
 import AppUser from "./app-user";
-import AppRoom from "./app-room";
+import AppTalk from "./app-talk";
 
 interface MessageContent {
-    message: string; /** message Text */
-    joins?: any; /** attached documents */
+    /** message Text */
+    message: string;
+    /** attached documents */
+    joins?: any;
 }
 
 interface AppMessage {
-    date: number; /** Date of the message (Timestamp) */
-    sender: AppUser; /** Sender of the message : Pseudo / Avatar */
-    target: AppRoom; /** Room / User */
-    content: MessageContent; /** Content of the message */
+    /** Date of the message (Timestamp) */
+    date: number;
+    senderId?: number
+    /** Sender of the message : Pseudo / Avatar */
+    sender?: AppUser;
+    /** Room / User */
+    targets?: AppTalk[];
+    /** Content of the message */
+    content: MessageContent; 
 }
 
 export default AppMessage;
