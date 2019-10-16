@@ -10,8 +10,6 @@ const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string
  * @param props 
  */
 const Button = (props: ButtonProps) => {
-    const _defaultClass = ["btn"];
-
     /**
      * Function will handle click
      */
