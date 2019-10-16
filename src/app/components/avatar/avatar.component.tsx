@@ -1,18 +1,21 @@
 import React from 'react';
 import AvatarProps from '../@prop-types/avatar.props';
-import "./avatar.scss";
+import './avatar.scss';
 
 interface IState {
-  size: number;
-  src: string;
+  loaded: boolean;
 }
 class Avatar extends React.Component<AvatarProps, IState> {
+  static defaultProps: AvatarProps = {
+    size: 50,
+    rounded: true,
+    src: 'https://picsum.photos/50'
+  };
   constructor(props: AvatarProps) {
     super(props);
 
     this.state = {
-      size: props.size || 50,
-      src: props.src || 'https://picsum.photos/50'
+      loaded: false
     };
   }
 
@@ -21,16 +24,24 @@ class Avatar extends React.Component<AvatarProps, IState> {
 
   componentWillUnmount() {}
 
+  handleImageLoaded = () => {
+    this.setState({
+      loaded: true
+    });
+  };
+
   render() {
+    const { size, src, rounded } = this.props;
     return (
       <div
-        className="avatar"
+        className={`avatar ${rounded ? 'avatar-rounded' : ''} ${rounded ? 'loaded' : 'loading'}`}
         style={{
-          width: this.state.size + 'px',
-          height: this.state.size + 'px'
+          width: size + 'px',
+          height: size + 'px'
         }}
       >
-        <img src={this.state.src} alt="avatar" />
+        <img src={src} alt="avatar" onLoad={this.handleImageLoaded} />
+        <div className="avatar-img" style={{ backgroundImage: `url(${src})` }}></div>
       </div>
     );
   }
