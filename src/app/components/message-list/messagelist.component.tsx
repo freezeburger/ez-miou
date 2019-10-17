@@ -22,8 +22,6 @@ const MessageList = (props:MessageListProps) => {
      )
 }
 
-
-
 MessageList.defaultProps = defaultProps;
 
 export default MessageList;

@@ -5,6 +5,9 @@ import { checkPropTypes } from 'prop-types';
 import MessageListProps from '../@prop-types/message-list.props';
 import { userProfileDefaultProps } from './userprofile.defaultProps';
 import Button from '../button/button.component';
+import UserProfileProps from '../@prop-types/user-profile-props';
+import { BtnTypes } from '../@prop-types/button.props';
+import Avatar from '../avatar/avatar.component';
 
 
 interface IState {
@@ -12,11 +15,11 @@ interface IState {
 }
 
  
-class UserProfile extends React.Component<UserProps, IState> {
+class UserProfile extends React.Component<UserProfileProps, IState> {
     
     static defaultProps = userProfileDefaultProps;
 
-    constructor(props:UserProps) {
+    constructor(props:UserProfileProps) {
         super(props);
     
         const { initialMessages } = props;
@@ -27,8 +30,16 @@ class UserProfile extends React.Component<UserProps, IState> {
 
     }
 
+    handleEdit = () => {
+        return 'Edit!'
+    }
+
+    handleDelete = () => {
+        return 'Deleted!'
+    }
+
     render() {
-        const { id, name, email, avatar, status } = this.props;
+        const { user, editAction, deleteAction } = this.props;
         const { messages } = this.state.messagesList;
         const initialMessages = messages.map((message:any, index:number) => {
             return <li key={index}>
@@ -42,20 +53,20 @@ class UserProfile extends React.Component<UserProps, IState> {
                 <div className="col-md-3">
                     <div className="profile-sidebar">
                         <div className="profile-userpic">
-                        <img src={avatar} className="img-responsive" alt=""/>
+                            <Avatar src={user.avatarUrl}></Avatar>
                         </div>
                         <div className="profile-usertitle">
                             <div className="profile-usertitle-id">
-                                {id}
+                                {user.id}
                             </div>
                             <div className="profile-usertitle-name">
-                                {name}
+                                {user.name}
                             </div>
                             <div className="profile-usertitle-status">
-                                {status}
+                                {user.status}
                             </div>
                             <div className="profile-usertitle-email">
-                                {email}
+                                {user.email}
                             </div>
                             <div className="profile-usertitle-mesages">
                                 <ul>
@@ -64,9 +75,8 @@ class UserProfile extends React.Component<UserProps, IState> {
                             </div>
                         </div>
                         <div className="profile-userbuttons">
-                            {/* <Button action={}></Button> */}
-                            <button type="button" className="btn btn-success btn-sm">Edit</button>
-                            <button type="button" className="btn btn-danger btn-sm">Delete</button>
+                            <Button action={editAction} ><span>Edit</span></Button>
+                            <Button action={deleteAction} btnTypes={BtnTypes.DANGER} ><span>Delete</span></Button>
                         </div>
                     </div>
                 </div>

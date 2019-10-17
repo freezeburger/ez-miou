@@ -1,7 +1,7 @@
 # Custom 
 public/
 src/index.tsx
-!public/souris.wav
+!public/souris.*
 
 # Logs
 logs

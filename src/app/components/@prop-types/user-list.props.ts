@@ -1,9 +1,9 @@
-//import AppUser from "../../services/@types/app-user";
+import AppUser from "../../services/@types/app-user";
 
-import UserProps from "./user-props";
+//import UserProps from "./user-props";
 
 export interface UserListProps {
-    userList : UserProps[];
+    userList : AppUser[];
 }
 
 export default UserListProps;

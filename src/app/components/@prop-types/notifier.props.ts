@@ -17,8 +17,8 @@ export interface NotifierMessage {
  */
 interface NotifierProps {
   messages: NotifierMessage[], // Messages List 
-  cancel(roomId : string):void, // Function called when the user reject the message
-  accept(roomId : string): void // Function called when the user wants to see the message 
+  cancel?(roomId : string):void, // Function called when the user reject the message
+  accept?(roomId : string): void // Function called when the user wants to see the message 
 }
 
 export default NotifierProps;

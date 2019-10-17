@@ -11,6 +11,16 @@
 
       .profile-userpic {
           display: flex;
+          .avatar {
+            float: none;
+            margin: 0 auto;
+            width: 50%;
+            height: 50%;
+            border: 1px solid grey;
+            -webkit-border-radius: 50% !important;
+            -moz-border-radius: 50% !important;
+            border-radius: 50% !important;
+          }
       }
       
       .profile-userpic img {
