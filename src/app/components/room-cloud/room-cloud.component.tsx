@@ -11,24 +11,27 @@ import './room-cloud.scss';
 
    return (
     <div className="container-fluid">
-        <div className="row">
-          <div className="col-12 miou-cloud-container">
-            <TagCloud>
-              { 
-                roomList.map(function(room, index) {
-                  const user: any = {
-                    counter: room.users.length,
-                    max: 15
-                  }
-                  return (
-                    <div key={index}>
-                      <RoomCard title={ room.name } user={ user }/>
-                    </div>
-                  )
-                })
-              }
-            </TagCloud>
-          </div>
+        <div className="col-12 miou-cloud-container">
+          <TagCloud
+            style={{
+              fontFamily: 'sans-serif',
+              fontSize: 30,
+              padding: 5,
+            }}>
+            { 
+              roomList.map(function(room, index) {
+                const user: any = {
+                  counter: room.users.length,
+                  max: 15
+                }
+                return (
+                  <div key={Math.floor(Math.random() * 10000)}>
+                    <RoomCard title={ room.name } user={ user }/>
+                  </div>
+                )
+              })
+            }
+          </TagCloud>
         </div>
     </div>
    );
