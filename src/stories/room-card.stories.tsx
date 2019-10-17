@@ -20,7 +20,7 @@ storiesOf("Room Card", module)
         title={text("Title Room (title)", "my room")}
         color={color("Border Color (color)", "green")}
         action={action("handleClick")}
-        user={object("User (user)", {"counter": number("Counter (user.counter)", 5), "max": number("Max (user.max)", 10)})}
+        user={object("User (user)", {"counter":  5, "max": 10})}
       ></RoomCard>
     </Wrapper>
   ));
