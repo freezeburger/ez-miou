@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageSliderProps from '../@prop-types/image-slider.props';
 import defaultProps from './image-slider.default-props';
 import './image-slider.component.css';
@@ -7,29 +7,34 @@ import './image-slider.component.css';
 const ImageSlider = (props:ImageSliderProps) => {
 
     const [index,setIndex] = useState(0);
-    const [LR, setLR] = useState(1);
-    const [myTimeout, setMyTimeout] = useState(0)
-
-    //console.log('inside ImageSlider func');
-    if (myTimeout) {
-        clearTimeout(myTimeout)
-    }
-    // TODO Moche...
-    let newTimeout = setTimeout( () => {
+    let LR = 1;
+  
+    const changeImage =() =>{
+        
         if(props.loop) {
-            setIndex((index+1) % props.imageList.length);
+            console.log('loop mode');
+            // setIndex( (index+1) % props.imageList.length);
         } else {
-            // console.log('unloop mode');
-            // let nextIndex = index+LR;
-            // setIndex(nextIndex);
-            // let tLR = (nextIndex === 0) ? 1 : LR;
-            // tLR = (nextIndex === (props.imageList.length - 1)) ? -1 : LR
-            // setLR(tLR);
-
+            console.log('unloop mode');
+            let nextIndex = index+LR;
+            LR = (nextIndex === 0) ? 1 : LR;
+            LR = (nextIndex === (props.imageList.length - 1)) ? -1 : LR
         }
-    }, props.delay);
 
-    //setMyTimeout(newTimeout);
+        setIndex((index+LR) % props.imageList.length);
+    }
+
+    useEffect(() => {
+        
+        const timer = setInterval(changeImage, props.delay)
+        return () => {
+          // Clean up the subscription
+          clearInterval(timer)
+        };
+      },
+      [props.loop,index]
+    );
+
 
     return (
         <div className="imageSlider">

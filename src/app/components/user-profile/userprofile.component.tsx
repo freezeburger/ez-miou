@@ -7,6 +7,7 @@ import { userProfileDefaultProps } from './userprofile.defaultProps';
 import Button from '../button/button.component';
 import UserProfileProps from '../@prop-types/user-profile-props';
 import { BtnTypes } from '../@prop-types/button.props';
+import Avatar from '../avatar/avatar.component';
 
 
 interface IState {
@@ -52,7 +53,7 @@ class UserProfile extends React.Component<UserProfileProps, IState> {
                 <div className="col-md-3">
                     <div className="profile-sidebar">
                         <div className="profile-userpic">
-                        <img src={user.avatarUrl} className="img-responsive" alt=""/>
+                            <Avatar src={user.avatarUrl}></Avatar>
                         </div>
                         <div className="profile-usertitle">
                             <div className="profile-usertitle-id">

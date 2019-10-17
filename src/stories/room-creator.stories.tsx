@@ -18,7 +18,7 @@ storiesOf('Room Creator', module)
   // DDE Comment passer une fonction dans le knob ?
   .add('Try The Knobs', () => (
     <Wrapper>
-      <RoomCreator onCreationRequested={action('Room to create')}></RoomCreator>
+      <RoomCreator onCreationRequested={action('Room to create (onCreationRequested)')}></RoomCreator>
     </Wrapper>
   ),
   { notes:'Component that allows the user to search for a room and trigger some action.'})
