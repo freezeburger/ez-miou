@@ -18,14 +18,16 @@ const generateName = () => {
     return names[getRandomInt(0, names.length + 1)];    
 }
 
+const name = generateName();
+
 /**
  * User profile default properties
  */
 export const userProfileDefaultProps = {
     id : Math.floor(Math.random() * 100000).toString(),
-    name: generateName(),
-    email: generateName() + '@cat.miou',
-    avatar: 'http://robohash.org/' + generateName(),
+    name: name,
+    email: name + '@cat.miou',
+    avatar: 'http://robohash.org/' + name,
     status: 'lost',
     initialMessages: {
         messages: [
