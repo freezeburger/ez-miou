@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import UserProfile from './app/components/user-profile/userprofile.component';
-import RoomCloud from './app/components/room-cloud/room-cloud.component';
+import Room from './app/containers/room/room.container';
 
 ReactDOM.render(
   <div>
-    <RoomCloud/>
-    <UserProfile></UserProfile>
+    <Room></Room>
 
   </div>,
   document.getElementById('root')
