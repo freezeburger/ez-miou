@@ -1,6 +1,6 @@
 import React from 'react';
 
- class Talk extends React.Component{
+ class Auth extends React.Component{
      
     constructor(props:any){
          super(props);
@@ -12,8 +12,10 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return '<div>Talk</div>'
+         return (<div>Auth</div>)
      }
  }
+
+ export default Auth;
 
 
