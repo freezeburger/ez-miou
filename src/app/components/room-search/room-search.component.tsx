@@ -36,6 +36,7 @@ class RoomSearch extends React.Component<RoomSearchProps, RoomSearchState> {
         return (
             <fieldset>
                 <input
+                    className="form-control"
                     value={searchTerm}
                     onChange={this.handleChange} />
 
