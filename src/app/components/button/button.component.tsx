@@ -53,15 +53,6 @@ const Button = (props: ButtonProps) => {
      </button>
     )
 }
-
-const opts:Options = {
-    height: '0',
-    width: '0',
-    playerVars: { // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-      start: 8
-    }
-}
 Button.defaultProps = {
     children:<span>test</span>,
     btnTypes: BtnTypes.SUCESS,

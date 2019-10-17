@@ -1,0 +1,7 @@
+.miou-cloud-container {
+    height: 50vh;
+    > div:nth-of-type(1){
+        height: 100%;
+        width: 100%;
+    }
+}

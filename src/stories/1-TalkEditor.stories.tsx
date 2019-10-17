@@ -33,17 +33,13 @@ const users =  [
 ];
 
 
-// const props = {
-//   userList:object('User list', users)
-// }
-
-// storiesOf('TalkEditor', module)
-//   .addDecorator(withKnobs) 
-//   /* Sub Title */
-//   .add('Try The Knobs', () => (
-//     <Wrapper>
-//    <TalkEditor 
-//       {...props}
-//        ></TalkEditor>
-//     </Wrapper>
-//   ));
+storiesOf('TalkEditor', module)
+  .addDecorator(withKnobs) 
+  /* Sub Title */
+  .add('Try The Knobs', () => (
+    <Wrapper>
+   <TalkEditor
+    userList={object('User list (userList)', users)}
+       ></TalkEditor>
+    </Wrapper>
+  ));

@@ -36,6 +36,7 @@ class RoomCreator extends React.Component<RoomCreatorProps, RoomCreatorState> {
         return (
             <fieldset>
                 <input
+                    className="form-control"
                     value={roomName}
                     onChange={this.handleChange} />
 
