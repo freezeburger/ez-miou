@@ -13,13 +13,7 @@ const data = {
   key: 123456
 };
 
-ReactDOM.render(
-  <div>
-
-
-  </div>,
-  document.getElementById('root')
-);
+ReactDOM.render(<div>#paz sur vous les chofaent qui supprime index #chofa #gestapo</div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
