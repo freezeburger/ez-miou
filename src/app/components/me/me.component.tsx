@@ -4,8 +4,8 @@ import defaultProps from './me.default-props';
 
 export const Me = (props: MeProps) => {
   return (
-    <div>
-      {props.name}
+     <div>
+      {props.children}
      </div>
   );
 };

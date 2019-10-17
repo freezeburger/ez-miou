@@ -14,7 +14,8 @@ const ImageSlider = (props:ImageSliderProps) => {
 
     return (
         <div className="imageSlider">
-            {
+            <img src={props.imageList[count]} alt=""/>
+           {/*  {
                 props.imageList.map( (image,i) => { 
                     if ( i === count) {
                         return(
@@ -24,7 +25,7 @@ const ImageSlider = (props:ImageSliderProps) => {
 
                 }
                 )
-            }
+            } */}
         </div>
     );
 

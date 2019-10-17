@@ -1,6 +1,6 @@
 import React from 'react';
 import UserListProps from '../@prop-types/user-list.props';
-import AppUser from '../../services/@types/app-user';
+//import AppUser from '../../services/@types/app-user'; old way
 
 const UserList = (props: UserListProps) => {
 

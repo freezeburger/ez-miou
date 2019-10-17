@@ -8,7 +8,7 @@ import YouTube, { Options } from 'react-youtube';
  * @param cssClassNames 
  * @param btnTypes 
  */
-const getClassNames =  (cssClassNames:string[] = [], btnTypes?: BtnTypes):string => {
+const getClassNames =  (cssClassNames:string[] = [], btnTypes: BtnTypes = BtnTypes.PRIMARY):string => {
  return cssClassNames.reduce( 
      (cssBase,cssName) => cssBase + ' ' + cssName ,'btn '+ btnTypes
     )  || 'btn btn-primary';
