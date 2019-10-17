@@ -8,11 +8,31 @@ import Button from '../button/button.component';
 import UserProfileProps from '../@prop-types/user-profile-props';
 import { BtnTypes } from '../@prop-types/button.props';
 import Avatar from '../avatar/avatar.component';
+import MessageList from '../message-list/messagelist.component';
+import AppMessage from '../../services/@types/app-message';
 
 
 interface IState {
-    messagesList: MessageListProps;
+    messagesList: AppMessage;
 }
+
+/** User local component */
+const User = (user:UserProps) => (
+    <div className="profile-usertitle">
+        <div className="profile-usertitle-id">
+            {user.id}
+        </div>
+        <div className="profile-usertitle-name">
+            {user.name}
+        </div>
+        <div className="profile-usertitle-status">
+            {user.status}
+        </div>
+        <div className="profile-usertitle-email">
+            {user.email}
+        </div>
+    </div>
+)
 
  
 class UserProfile extends React.Component<UserProfileProps, IState> {
@@ -40,40 +60,31 @@ class UserProfile extends React.Component<UserProfileProps, IState> {
 
     render() {
         const { user, editAction, deleteAction } = this.props;
-        const { messages } = this.state.messagesList;
-        const initialMessages = messages.map((message:any, index:number) => {
-            return <li key={index}>
-                <span>date:{message.date}</span>
-                <p>{message.content}</p>
-            </li>
-        })
+        // const { messages } = this.state.messagesList;
+        // const initialMessages = messages.map((message:any, index:number) => {
+        //     return <li key={index}>
+        //         <span>date:{message.date}</span>
+        //         <p>{message.content}</p>
+        //     </li>
+        // })
         
         return (
             <div className="user-profile row profile">
                 <div className="col">
                     <div className="profile-sidebar">
                         <div className="profile-userpic">
-                            <Avatar src={user.avatarUrl}></Avatar>
+                            <Avatar src={user.avatarUrl} size={100}></Avatar>
                         </div>
-                        <div className="profile-usertitle">
-                            <div className="profile-usertitle-id">
-                                {user.id}
-                            </div>
-                            <div className="profile-usertitle-name">
-                                {user.name}
-                            </div>
-                            <div className="profile-usertitle-status">
-                                {user.status}
-                            </div>
-                            <div className="profile-usertitle-email">
-                                {user.email}
-                            </div>
-                            <div className="profile-usertitle-mesages">
-                                <ul>
-                                    {initialMessages}
-                                </ul>
-                            </div>
-                        </div>
+
+                        <User {...user}/>
+
+                        {/* <MessageList messages={initialMessages}></MessageList> */}
+
+                        {/* <div className="profile-usertitle-mesages">
+                            <ul>
+                                {initialMessages}
+                            </ul>
+                        </div> */}
                         <div className="profile-userbuttons">
                             <Button action={editAction} ><span>Edit</span></Button>
                             <Button action={deleteAction} btnTypes={BtnTypes.DANGER} ><span>Delete</span></Button>
