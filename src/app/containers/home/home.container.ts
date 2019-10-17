@@ -1,4 +1,6 @@
-import React from 'react';
+import React  from 'react';
+import Auth from '../../features/auth/auth.feature';
+import ImageSlider from '../../components/image-slider/image-slider.component';
 
  class Home extends React.Component{
      
@@ -6,13 +8,13 @@ import React from 'react';
          super(props);
      }
 
-     //LifeCycle
-     componentDidMount(){}
-
-     componentWillUnmount(){}
-
      render(){
-         return '<div>Home</div>'
+         return (
+            <React.Fragment>
+                <Auth/>
+                <ImageSlider/>
+            </React.Fragment>
+         )
      }
  }
 
