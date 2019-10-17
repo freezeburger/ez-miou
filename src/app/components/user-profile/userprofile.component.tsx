@@ -11,7 +11,7 @@ import Avatar from '../avatar/avatar.component';
 import MessageList from '../message-list/messagelist.component';
 import AppMessage from '../../services/@types/app-message';
 
-
+/** state */
 interface IState {
     messagesList: AppMessage;
 }
