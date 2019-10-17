@@ -19,10 +19,12 @@ const getClassNames =  (cssClassNames:string[] = [], btnTypes: BtnTypes = BtnTyp
  * @param props 
  */
 const Button = (props: ButtonProps) => {
+    const snd: HTMLAudioElement = new Audio("./souris.wav");
     /**
      * Function will handle click
      */
     const handleClick = () => {
+        snd.play();
         if (props.action) {
             //Throw an event for notify the user we clicked
             props.action();
@@ -30,6 +32,7 @@ const Button = (props: ButtonProps) => {
             //Throw an event to catch
             return;
         }
+        snd.currentTime=0;
     }
 
     const onHover = () => {
@@ -60,7 +63,7 @@ const opts:Options = {
     }
 }
 Button.defaultProps = {
-    children:<YouTube opts={opts} videoId="Eb3PQmao7QE"></YouTube>,
+    children:<span>test</span>,
     btnTypes: BtnTypes.SUCESS,
     action: () => {},
     icon:<FaBeer />

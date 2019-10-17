@@ -7,6 +7,7 @@ import UserProfile from './app/components/user-profile/userprofile.component';
 import Avatar from './app/components/avatar/avatar.component';
 import Message from './app/components/message/message.component';
 import Button from './app/components/button/button.component';
+import RoomCloud from './app/components/room-cloud/room-cloud.component';
 
 const data = {
   key: 123456
@@ -14,6 +15,7 @@ const data = {
 
 ReactDOM.render(
   <div>
+    <RoomCloud></RoomCloud>
     <UserProfile></UserProfile>
     <RoomCard></RoomCard>
     <Button></Button>
