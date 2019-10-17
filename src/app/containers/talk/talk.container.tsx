@@ -15,5 +15,5 @@ import React from 'react';
          return '<div>Talk</div>'
      }
  }
-
+export default Talk;
 
