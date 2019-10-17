@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import ButtonProps, { BtnTypes } from '../@prop-types/button.props';
 import { FaBeer } from 'react-icons/fa';
-import YouTube, { Options } from 'react-youtube';
 
 /**
  * generate the CSS string we will pass to the classnames attribute.
@@ -19,7 +18,11 @@ const getClassNames =  (cssClassNames:string[] = [], btnTypes: BtnTypes = BtnTyp
  * @param props 
  */
 const Button = (props: ButtonProps) => {
+
+
+
     const snd: HTMLAudioElement = new Audio("./souris.wav");
+    let currentStyle:CSSProperties = {};
     /**
      * Function will handle click
      */
@@ -35,8 +38,14 @@ const Button = (props: ButtonProps) => {
         snd.currentTime=0;
     }
 
-    const onHover = () => {
+    const onHover = (event:any) => {
+        let currentStyle:String='top:'+ (Math.random()*200)+'px ;right:'+ (Math.random()*200)+'px ; position: absolute';
+        // currentStyle.top = (Math.random()*200) + "px";
+        // currentStyle.right = (Math.random()*200) + "px";
         props.actionOnHover && props.actionOnHover();
+        console.log(event.target);
+        event.target.style = currentStyle;
+        //event.target && event.target
     }
 
 
@@ -48,6 +57,7 @@ const Button = (props: ButtonProps) => {
         className={getClassNames(props.cssClassNames, props.btnTypes)} 
         onClick={handleClick} 
         onMouseEnter={onHover}
+        style={currentStyle}
         >
         {props.icon} { props.children || <p> Default cuz you can't read the spec you faggot </p> }
      </button>
@@ -62,5 +72,3 @@ Button.defaultProps = {
 
 
 export default Button;
-
-
