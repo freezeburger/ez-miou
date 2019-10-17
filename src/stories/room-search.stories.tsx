@@ -11,8 +11,6 @@ const styles:CSSProperties = {
 };
 const Wrapper = ({ children }:any) => <div style={styles}>{children}</div>;
 
-const roomSearchComponent = React.createRef<RoomSearch>();
-
 /* Storie Title */
 storiesOf('Room Search', module)
   .addDecorator(withKnobs) 
@@ -21,7 +19,6 @@ storiesOf('Room Search', module)
   .add('Try The Knobs', () => (
     <Wrapper>
       <RoomSearch
-        ref={roomSearchComponent}
         rooms={array('Rooms', ["Room1", "Room2", "Room3"], ',')}
         onSearchCompleted={action('Room to search')}></RoomSearch>
     </Wrapper>
