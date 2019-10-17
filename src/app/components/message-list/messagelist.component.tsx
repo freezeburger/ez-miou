@@ -3,24 +3,17 @@ import MessageListProps from '../@prop-types/message-list.props';
 import defaultProps from './messagelist.default-props';
 import AppMessage from '../../services/@types/app-message';
 import './message-list.scss';
+import Message from '../message/message.component';
 
-const Message = (props:AppMessage) => (
-    <li className="list-group-item message-item">
-        <div className="msg-sender">{ props.sender.name }</div>
-        <div className="msg-date">{ props.date }</div>
-        <div className="msg-message">{ props.content.message }</div>
-    </li>
-)
-
-const MessageList = (props:MessageListProps) => {
-    return (
-        <ul className="list-group message-list">
-        { 
-        props.messages.map( (msg,i) =>  <Message key={i} {...msg}/>)
-        }
-        </ul>
-     )
-}
+const MessageList = (props: MessageListProps) => {
+  return (
+    <ul className="list-group message-list">
+      {props.messages.map((msg, i) => (
+        <Message content={msg.content.message} date={msg.date} key={i} />
+      ))}
+    </ul>
+  );
+};
 
 MessageList.defaultProps = defaultProps;
 
