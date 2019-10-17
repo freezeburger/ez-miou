@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import RoomCard from './app/components/room-card/roomcard.component';
 import UserProfile from './app/components/user-profile/userprofile.component';
-import Avatar from './app/components/avatar/avatar.component';
-import Message from './app/components/message/message.component';
-import Button from './app/components/button/button.component';
 import RoomCloud from './app/components/room-cloud/room-cloud.component';
 
 const data = {
