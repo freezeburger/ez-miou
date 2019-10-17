@@ -13,9 +13,8 @@ class Avatar extends React.Component<AvatarProps, IState> {
     src: 'https://picsum.photos/50'
   };
 
-  state = {
-    loaded: false,
-    toto: 123
+  state: IState = {
+    loaded: false
   };
 
   constructor(props: AvatarProps) {
