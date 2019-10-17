@@ -14,10 +14,10 @@ import AuthSignup from '../auth-signup/authsignup.feature';
      componentWillUnmount(){}
 
      render(){
-         return <div className="row">
+         return <React.Fragment>
              <AuthSignin></AuthSignin>
              <AuthSignup></AuthSignup>
-             </div>
+             </React.Fragment>
              
      }
  }

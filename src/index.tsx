@@ -7,7 +7,7 @@ import RoomCloud from './app/components/room-cloud/room-cloud.component';
 import Home from './app/containers/home/home.container';
 
 ReactDOM.render(
-  <div>
+  <div className="container-fluid">
       <Home></Home>
 
   </div>,

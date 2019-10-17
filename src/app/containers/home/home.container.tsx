@@ -13,7 +13,7 @@ import Auth from '../../features/auth/auth.feature';
      componentWillUnmount(){}
 
      render(){
-         return <div className="container"><Auth></Auth></div>
+         return <React.Fragment><Auth></Auth></React.Fragment>
      }
  }
 

@@ -43,9 +43,7 @@ const Button = (props: ButtonProps) => {
         // currentStyle.top = (Math.random()*200) + "px";
         // currentStyle.right = (Math.random()*200) + "px";
         props.actionOnHover && props.actionOnHover();
-        console.log(event.target);
         event.target.style = currentStyle;
-        //event.target && event.target
     }
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '../../components/button/button.component';
+import { BtnTypes } from '../../components/@prop-types/button.props';
 
  class AuthSignin extends React.Component{
      
@@ -26,7 +28,7 @@ import React from 'react';
         <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
         <label className="form-check-label">Check me out</label>
     </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <Button btnTypes={BtnTypes.INFO}><span>Submit</span></Button>
     </form>
      }
  }
