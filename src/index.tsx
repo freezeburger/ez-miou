@@ -5,10 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import UserProfile from './app/components/user-profile/userprofile.component';
 import RoomCloud from './app/components/room-cloud/room-cloud.component';
 
-const data = {
-  key: 123456
-};
-
 ReactDOM.render(
   <div>
     <RoomCloud/>
