@@ -6,7 +6,7 @@ const defaultRoomCloudProps =  {
       {
           // Identifier of the room
           id: 1,
-          name: 'Ola',
+          name: 'Java Talk',
           subject: 'Java talk',
           // Contains the users that are currently in this room
           users: [
@@ -29,7 +29,28 @@ const defaultRoomCloudProps =  {
               status: AppUserStatus.ONLINE
             }
           ]
-      }
+      },
+      {
+        // Identifier of the room
+        id: 1,
+        name: 'Java poo',
+        subject: 'Java poo',
+        // Contains the users that are currently in this room
+        users: [
+          {
+            id: 1,
+            name: 'Lisa',
+            email: 'marge@blabla.com',
+            status: AppUserStatus.ONLINE
+          },
+          {
+            id: 1,
+            name: 'Homer',
+            email: 'homer@blabla.com',
+            status: AppUserStatus.AWAY
+          }
+        ]
+    }
     ]
    }
 
