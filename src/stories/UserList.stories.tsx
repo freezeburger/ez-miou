@@ -34,7 +34,7 @@ const users:AppUser[] = [{
 }];
 
 /* Storie Title */
-storiesOf('Configuration', module)
+storiesOf('User List', module)
   .addDecorator(withKnobs) 
   /* Sub Title */
   .add('tester Mon composant', () => (
