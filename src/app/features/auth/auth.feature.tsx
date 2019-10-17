@@ -15,8 +15,10 @@ import AuthSignup from '../auth-signup/auth-signup.feature';
 
      render(){
          return (
-            <AuthSignin onLoginAttempt={(pseudo, password) => console.log(`${pseudo} is trying to log in with password ${password} (how safe, eh!).`)} />
-            <AuthSignup onSignupAttempt={(pseudo, password) => console.log(`${pseudo} is trying to sign up with password ${password} (how safe, eh!).`)} />
+            <React.Fragment>
+                <AuthSignin onLoginAttempt={(pseudo, password) => console.log(`${pseudo} is trying to log in with password ${password} (how safe, eh!).`)} />
+                <AuthSignup onSignupAttempt={(pseudo, password) => console.log(`${pseudo} is trying to sign up with password ${password} (how safe, eh!).`)} />
+            </React.Fragment>
          );
      }
  }
