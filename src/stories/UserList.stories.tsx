@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean, number, array, object } from '@storybook/addon-knobs';
-import UserList from '../app/components/user-list/userlist.component';
+import UserList from '../app/components/user-list/user-list.component';
 import UserProps from '../app/components/@prop-types/user-props';
 import UserListProps from '../app/components/@prop-types/user-list.props';
 import AppUser, { AppUserStatus } from '../app/services/@types/app-user';

@@ -24,3 +24,5 @@ class TalkHeader extends React.Component < UserProps, IState > {
         return (<div>TalkHeader</div>)
     }
 }
+
+export default TalkHeader;
