@@ -11,7 +11,7 @@ const defaultRoomCardProps: RoomCardProps = {
   size: {
     width: 'auto',
     height: 'auto'
-  };
+  }
 };
 
 export default defaultRoomCardProps;
