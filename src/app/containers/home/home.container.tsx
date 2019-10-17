@@ -1,6 +1,7 @@
 import React from 'react';
+import Auth from '../../features/auth/auth.feature';
 
- class AuthSignin extends React.Component{
+ class Home extends React.Component<any>{
      
     constructor(props:any){
          super(props);
@@ -12,8 +13,8 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return '<div>AuthSignin</div>'
+         return <div className="container"><Auth></Auth></div>
      }
  }
 
-
+export default Home;

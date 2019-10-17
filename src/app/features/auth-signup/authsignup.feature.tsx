@@ -15,5 +15,5 @@ import React from 'react';
          return '<div>AuthSignup</div>'
      }
  }
-
+export default AuthSignup;
 
