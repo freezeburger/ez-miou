@@ -3,6 +3,8 @@ import UserProfile from '../../components/user-profile/userprofile.component';
 import UserList from '../../components/user-list/userlist.component';
 import { AppUserStatus } from '../../services/@types/app-user';
 import './talk.scss';
+import MessageList from '../../components/message-list/messagelist.component';
+import TalkEditor from '../../components/talk-editor/talk-editor.component';
 
  class Talk extends React.Component{
      
@@ -53,7 +55,16 @@ import './talk.scss';
                     </div>
                 </div>
                 <div className="col-9">
-
+                    <div className="row">
+                        <div className="col message-list-container">
+                            <MessageList/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col talk-editor">
+                            <TalkEditor/>
+                        </div>
+                    </div>
                 </div>
             </div>
          </div>)
