@@ -8,6 +8,7 @@
     "@types/node": "12.7.12",
     "@types/react": "^16.9.7",
     "@types/react-dom": "16.9.2",
+    "@types/react-toastr": "^3.0.4",
     "@types/react-youtube": "^7.6.2",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
@@ -15,6 +16,7 @@
     "react-dom": "^16.10.2",
     "react-markdown": "^4.2.2",
     "react-scripts": "3.2.0",
+    "react-toastr": "^3.0.0",
     "typescript": "3.6.4"
   },
   "devDependencies": {

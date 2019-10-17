@@ -15,7 +15,7 @@ const RoomCard = (props: RoomCardProps) => {
 
   return (
     <div
-      className="card"
+      className="card d-inline-block"
       onClick={handleClick}
       style={{ cursor: clickable ? "pointer" : "default" }}
     >
