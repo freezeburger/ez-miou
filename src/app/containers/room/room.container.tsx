@@ -1,6 +1,5 @@
 import React from 'react';
 import UserProfile from '../../components/user-profile/userprofile.component';
-import TalkEditor from '../../components/talk-editor/talk-editor.component';
 import RoomSearch from '../../components/room-search/room-search.component';
 import RoomCreator from '../../components/room-creator/room-creator.component';
 
