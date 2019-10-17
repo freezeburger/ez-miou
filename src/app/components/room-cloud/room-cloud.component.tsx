@@ -14,8 +14,6 @@ import './room-cloud.scss';
         <div className="row">
           <div className="col-12 miou-cloud-container">
             <TagCloud>
-              <div>tuttu</div>
-              <div>idjsfidsjf</div>
               { 
                 roomList.map(function(room, index) {
                   const user: any = {
