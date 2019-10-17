@@ -7,7 +7,11 @@ const defaultRoomCardProps: RoomCardProps = {
     max: 10
   },
   color: "red",
-  action:() => {alert('waza')}
+  action:() => {alert('waza')},
+  size: {
+    width: 'auto',
+    height: 'auto'
+  };
 };
 
 export default defaultRoomCardProps;
