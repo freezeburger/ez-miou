@@ -17,10 +17,10 @@ storiesOf("Room Card", module)
   .add("Try The Knobs", () => (
     <Wrapper>
       <RoomCard 
-        title={text("Title Room", "my room")}
-        color={color("Border Color", "green")}
+        title={text("Title Room (title)", "my room")}
+        color={color("Border Color (color)", "green")}
         action={action("handleClick")}
-        user={object("User", {"counter": number("Counter", 5), "max": number("Max", 10)})}
+        user={object("User (user)", {"counter": number("Counter (user.counter)", 5), "max": number("Max (user.max)", 10)})}
       ></RoomCard>
     </Wrapper>
   ));
