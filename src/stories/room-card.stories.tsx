@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 import { action } from "@storybook/addon-actions";
 import { default as Welcome } from "../app/components/me/me.component";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, boolean, number, color } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, number, color, object } from "@storybook/addon-knobs";
 import { withMarkdownNotes } from "@storybook/addon-notes";
 import RoomCard from "../app/components/room-card/roomcard.component";
 
@@ -22,7 +22,7 @@ storiesOf("Room Card", module)
         title={text("Title Room", "my room")}
         color={color("Border Color", "green")}
         action={action("handleClick")}
-        user={}
+        user={object("User", {"counter": number("Counter", 5), "max": number("Max", 10)})}
       ></RoomCard>
     </Wrapper>
   ));
