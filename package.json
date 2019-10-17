@@ -18,10 +18,20 @@
     "typescript": "3.6.4"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.2.4",
+    "@storybook/addon-info": "^5.2.4",
+    "@storybook/addon-knobs": "^5.2.4",
+    "@storybook/addon-links": "^5.2.4",
+    "@storybook/addon-notes": "^5.2.4",
+    "@storybook/addons": "^5.2.4",
+    "@storybook/react": "^5.2.4",
+    "@types/storybook__react": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
     "bootstrap": "^4.3.1",
     "json-server": "^0.15.1",
     "node-sass": "^4.12.0",
     "react-bootstrap": "^1.0.0-beta.14",
+    "react-docgen-typescript-loader": "^3.3.0",
     "react-icons": "^3.7.0",
     "react-youtube": "^7.9.0",
     "typedoc": "^0.15.0"
@@ -30,7 +40,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
