@@ -15,6 +15,7 @@ const data = {
 
 ReactDOM.render(
   <div>
+    <RoomCloud/>
     <UserProfile></UserProfile>
 
   </div>,
