@@ -10,13 +10,11 @@ const styles:CSSProperties = {
 };
 const Wrapper = ({ children }:any) => <div style={styles}>{children}</div>;
 
-const value = object('Room cards', defaultRoomCloudProps.roomCards);
-
 storiesOf('Room cloud component', module)
   .addDecorator(withKnobs) 
   /* Sub Title */
   .add('Usage', () => (
     <Wrapper>
-      <RoomCloud roomCards={value}/>
+      <RoomCloud roomCards={object('Room cards', defaultRoomCloudProps.roomCards)}/>
     </Wrapper>
   ));
