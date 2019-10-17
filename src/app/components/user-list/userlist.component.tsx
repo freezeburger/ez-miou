@@ -5,8 +5,15 @@ import UserListProps from '../@prop-types/user-list.props';
 const UserList = (props: UserListProps) => {
 
   return (
-    <div>{
-        props.userList && props.userList.map && props.userList.map( user => <div>{user.name}</div> )
+    <div className="list-group">{
+        props.userList && props.userList.map && props.userList.map( user => <div className="list-group-item">
+        <h4>{
+            user.name.toUpperCase()
+        }</h4>
+        <code>{
+            user.email
+        }</code>
+        </div> )
     }</div>
   );
 };
