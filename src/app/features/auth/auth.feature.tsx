@@ -8,11 +8,6 @@ import AuthSignup from '../auth-signup/authsignup.feature';
          super(props);
      }
 
-     //LifeCycle
-     componentDidMount(){}
-
-     componentWillUnmount(){}
-
      render(){
          return (
          <div className="card">

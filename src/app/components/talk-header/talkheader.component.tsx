@@ -7,7 +7,7 @@ interface IState {
     user: AppUser;
 }
 
-class TalkHeader extends React.Component < UserProps, IState > {
+class TalkHeader extends React.Component < any, IState > {
 
     static defaultProps = talkHeaderDefaultProps;
 
@@ -24,3 +24,5 @@ class TalkHeader extends React.Component < UserProps, IState > {
         return (<div>TalkHeader</div>)
     }
 }
+
+export default TalkHeader;

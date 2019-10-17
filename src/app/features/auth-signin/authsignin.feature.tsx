@@ -6,13 +6,8 @@ import React from 'react';
          super(props);
      }
 
-     //LifeCycle
-     componentDidMount(){}
-
-     componentWillUnmount(){}
-
      render(){
-         return '<div>AuthSignin</div>'
+         return <div>AuthSignin</div>
      }
  }
 

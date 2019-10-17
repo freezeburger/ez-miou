@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './app/containers/home/home.container';
+import Room from './app/containers/room/room.container';
 
 ReactDOM.render(
   <div>
-    <Home/>
+{/*  <Home/> */}
+    <Room/> 
+{/*     <Talk/> */}
   </div>,
   document.getElementById('root')
 );
