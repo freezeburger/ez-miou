@@ -5,5 +5,5 @@ import AppRoom from "../../services/@types/app-room";
  */
 export default interface RoomCloudProps {
     // List of Room card
-    roomCards: AppRoom[];
+    roomCards?: AppRoom[];
 } 
