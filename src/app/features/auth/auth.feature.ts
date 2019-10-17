@@ -12,7 +12,9 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return '<div>Auth</div>'
+         return <div classNames="card">
+         <
+         </div>
      }
  }
 
