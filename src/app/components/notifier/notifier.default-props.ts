@@ -3,29 +3,23 @@ import NotifierProps from "../@prop-types/notifier.props";
 const defaultProps: NotifierProps = {
   messages: [
   {
-      room: {
-          id: '1',
-          name: 'Room 1'
-      },
-      messageDetail: {
-          userName: 'User Name',
-          message : 'Posted Message'
+      roomId: '1',
+      message: {
+          content : 'Posted Message',
+          date : Date.now()
       }
   },
   {
-    room: {
-        id: '2',
-        name: 'Room 2'
-    },
-    messageDetail: {
-        userName: 'User Name 2',
-        message : 'Posted Message 2'
+    roomId: '2',
+    message : {
+        content: 'Posted Message 2',
+        date : Date.now()
     }
   }], // Messages List 
-  cancel: (roomId : string) => {
-      console.log(`Canceled ${roomId}`);
+  close: () => {
+      console.log(`Closed`);
   },
-  accept: (roomId : string) => {
+  show: (roomId : string) => {
       console.log(`Go to Room ${roomId}`);
   }
 };

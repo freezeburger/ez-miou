@@ -1,15 +1,11 @@
+import MessageProps from "./message.props"
+
 /**
  * Received Message Content 
  */
 export interface NotifierMessage {
-  room: {
-    id: string,
-    name: string;
-  },
-  messageDetail: {
-    userName: string,
-    message : string
-  }
+  roomId: string,
+  message: MessageProps
 }
 
 /**
@@ -17,8 +13,8 @@ export interface NotifierMessage {
  */
 interface NotifierProps {
   messages: NotifierMessage[], // Messages List 
-  cancel?(roomId : string):void, // Function called when the user reject the message
-  accept?(roomId : string): void // Function called when the user wants to see the message 
+  close?():void, // Function called when the user reject the message
+  show?(roomId : string): void // Function called when the user wants to see the message 
 }
 
 export default NotifierProps;

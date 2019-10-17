@@ -20,32 +20,26 @@ storiesOf('Notifier', module)
   .add('Notifier Component', () => (
     <Wrapper>
       <Notifier 
-        messages={
+        messages = {
           [
             {
-              room: {
-                id: text('Room Id', '0'),
-                name: 'Room Name'
-              }, 
-              messageDetail: {
-                userName : 'User Name',
-                message: text('Message Content', 'Posted Message')
+              roomId: text('Room Id', '0'),
+              message: {
+                content: text('Message Content', 'Posted Message'),
+                date: Date.now()
               }
             },
             {
-              room: {
-                id: '1',
-                name: 'Room Name'
-              }, 
-              messageDetail: {
-                userName : 'User Name',
-                message: 'Posted Message 2'
+              roomId: '1',
+              message: {
+                content: 'Posted Message 2',
+                date: Date.now()
               }
             }
           ]
         }
-        cancel={action(`Message Cancelled`)}
-        accept={action(`Message Accepted`)}
+        close={action(`Message Cancelled`)}
+        show={action(`Message Accepted`)}
         />
     </Wrapper>
   ))
