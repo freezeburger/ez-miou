@@ -1,8 +1,8 @@
 import React, { CSSProperties } from 'react';
-import { linkTo } from '@storybook/addon-links';
-import { default as Welcome } from '../app/components/me/me.component';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, text, boolean, number, array ,object } from '@storybook/addon-knobs';
 import RoomCloud from '../app/components/room-cloud/room-cloud.component';
+import defaultRoomCloudProps from '../app/components/room-cloud/room-cloud.default-props';
 
 /* Component wrapper */
 const styles:CSSProperties = {
@@ -10,35 +10,13 @@ const styles:CSSProperties = {
 };
 const Wrapper = ({ children }:any) => <div style={styles}>{children}</div>;
 
-/* Storie Title */
-export default {
-  title: 'Room Cloud'
-};
+const value = object('Room cards', defaultRoomCloudProps.roomCards);
 
-export const toStorybook = () => (
-  <Wrapper>
-    <RoomCloud></RoomCloud>
-  </Wrapper>
-);
-
-/* Sub Title */
-toStorybook.story = {
-  name: 'Example',
-  addons:{
-    notes: 'A simple example.'
-  }
-};
-
-// export const thereIsMyUseCase = () => (
-//   <Wrapper>
-//     <Welcome>'A Simple Use Case of Me Component'</Welcome>
-//     <button className="btn btn-primary">Next Story</button>
-//   </Wrapper>
-// );
-
-// /* Sub Title */
-// thereIsMyUseCase.story = {
-//   name: 'A Simple Use Case of Me Component',
-// };
-
-
+storiesOf('Room cloud component', module)
+  .addDecorator(withKnobs) 
+  /* Sub Title */
+  .add('Usage', () => (
+    <Wrapper>
+      <RoomCloud roomCards={value}/>
+    </Wrapper>
+  ));
