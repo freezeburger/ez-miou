@@ -15,7 +15,7 @@ const data = {
 
 ReactDOM.render(
   <div>
-
+    <UserProfile></UserProfile>
 
   </div>,
   document.getElementById('root')
