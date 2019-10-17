@@ -13,15 +13,13 @@ const styles:CSSProperties = {
   textAlign: 'center',
 };
 const Wrapper = ({ children }:any) => 
-<div id='test' style={styles}>
+<div style={styles}>
   {children}
   <pre>
     {'<Button btnTypes=' + select('ClassCss', BtnTypes, BtnTypes.PRIMARY) + ' action=yourOnClickAction() actionOnHover=yourOnHoverAction()><span>'+ text('Input Text','pass the mouse on me you pervert')+'</span></Button>'}
   </pre>
 </div>
 ;
-const test = select('ClassCss', BtnTypes, BtnTypes.PRIMARY);
-let buttonCode = "";
 
 /* Storie Title */
 storiesOf('ButtonConfig', module)
