@@ -50,7 +50,7 @@ class UserProfile extends React.Component<UserProfileProps, IState> {
         
         return (
             <div className="user-profile row profile">
-                <div className="col-md-3">
+                <div className="col">
                     <div className="profile-sidebar">
                         <div className="profile-userpic">
                             <Avatar src={user.avatarUrl}></Avatar>

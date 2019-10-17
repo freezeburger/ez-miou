@@ -1,6 +1,6 @@
 import React from 'react';
 
- class AuthSignin extends React.Component{
+ class AuthSignup extends React.Component{
      
     constructor(props:any){
          super(props);
@@ -12,8 +12,10 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return '<div>AuthSignin</div>'
+         return (<div>AuthSignup</div>)
      }
  }
 
+
+ export default AuthSignup;
 

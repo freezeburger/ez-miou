@@ -2,6 +2,7 @@ import React from 'react';
 import RoomCreatorProps from '../@prop-types/room-creator.props';
 import Button from '../button/button.component';
 import { IoIosAdd } from "react-icons/io";
+import defaultProps from './room-creator.default-props';
 
 /**
  * The state contains the data about the room being created
@@ -14,6 +15,7 @@ interface RoomCreatorState {
  * Component that allows the user to search for a room and trigger some action.
  */
 class RoomCreator extends React.Component<RoomCreatorProps, RoomCreatorState> {
+    static defaultProps = defaultProps;
     
     state = {
         name: ''

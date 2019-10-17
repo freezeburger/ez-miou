@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserProfile from './app/components/user-profile/userprofile.component';
-import RoomCloud from './app/components/room-cloud/room-cloud.component';
+import RoomContainer from './app/containers/room/room.container';
+import Auth from './app/features/auth/auth.feature';
+import Talk from './app/containers/talk/talk.container';
 
 ReactDOM.render(
   <div>
-    <RoomCloud/>
-    <UserProfile></UserProfile>
-
+    {/* <RoomCloud/>
+    <UserProfile></UserProfile> */}
+    {/* <Auth></Auth> */}
+    {/* <RoomContainer/> */}
+      <Talk></Talk>
   </div>,
   document.getElementById('root')
 );
