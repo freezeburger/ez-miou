@@ -42,7 +42,9 @@ storiesOf('User List', module)
   .add('tester Mon composant', () => (
     <Wrapper>
       <UserList userList={object('List', users)}></UserList>
-      <UserList userList={users}></UserList>
+      
     </Wrapper>
   ),
   { notes:'User List'})
+
+  //<UserList userList={users}></UserList>
