@@ -53,30 +53,25 @@ class Notifier extends React.Component<NotifierProps> {
   };
 
   render = () => {
+    const {messages, accept, cancel} = this.props;
     return (
       <div>
-        {this.props.messages.map((notifierMessage: NotifierMessage, index: number) => {
+        {messages.map((notifierMessage: NotifierMessage, index: number) => {
           return (
-            <div key={index}>
-              <span>{notifierMessage.messageDetail.message}</span>
-              <button
+            <div key={index} className="row">
+              <span className="col-md-4">
+                {notifierMessage.messageDetail.message}
+              </span>
+              <button className="btn btn-primary col-md-4"
                 onClick={() => {
                   this.send(notifierMessage);
-                }}
-              >
-                Browser
-              </button>
-              <button
-                onClick={() => {
-                  this.props.accept(notifierMessage.room.id);
+                  accept && accept(notifierMessage.room.id);
                 }}
               >
                 Display
-              </button>
-              <button
-                onClick={() => {
-                  this.props.cancel(notifierMessage.room.id);
-                }}
+              </button> 
+              <button className="btn btn-secondary col-md-4"
+                onClick={ () => { cancel && cancel(notifierMessage.room.id); } }
               >
                 Ignore
               </button>

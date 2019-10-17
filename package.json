@@ -15,7 +15,8 @@
     "react-dom": "^16.10.2",
     "react-markdown": "^4.2.2",
     "react-scripts": "3.2.0",
-    "typescript": "3.6.4"
+    "typescript": "3.6.4",
+    "react-toastr": "^3.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.2.4",
