@@ -16,8 +16,9 @@ storiesOf('UserProfile', module)
     /* Sub Title */
     .add('Try The User Profile', () => {
         const user = userProfileDefaultProps.user;
-        const name = text('Name', user.name);
+        
         const id = number('Id', user.id);
+        const name = text('Name', user.name);
         const email = text('Email', user.email);
         const avatar = text('Avatar', user.avatarUrl);
         const status = text('Status', user.status);
