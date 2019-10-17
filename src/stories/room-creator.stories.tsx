@@ -11,11 +11,8 @@ const styles:CSSProperties = {
 };
 const Wrapper = ({ children }:any) => <div style={styles}>{children}</div>;
 
-/* Storie Title */
 storiesOf('Room Creator', module)
-  .addDecorator(withKnobs) 
-  /* Sub Title */
-  // DDE Comment passer une fonction dans le knob ?
+  .addDecorator(withKnobs)
   .add('Try The Knobs', () => (
     <Wrapper>
       <RoomCreator onCreationRequested={action('Room to create (onCreationRequested)')}></RoomCreator>
