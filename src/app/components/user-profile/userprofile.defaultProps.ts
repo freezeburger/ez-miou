@@ -24,15 +24,19 @@ const name = generateName();
  * User profile default properties
  */
 export const userProfileDefaultProps = {
-    id : Math.floor(Math.random() * 100000).toString(),
-    name: name,
-    email: name + '@cat.miou',
-    avatar: 'http://robohash.org/' + name,
-    status: 'lost',
+    user: {
+        id : Math.floor(Math.random() * 100000),
+        name: name,
+        email: name + '@cat.miou',
+        avatarUrl: 'http://robohash.org/' + name,
+        status: 'lost',
+    },
     initialMessages: {
         messages: [
             {date: Date.now(), content: 'blabla'},
             {date: Date.now(), content: 'encore!!!'}
         ]
     },
+    editAction: () => {},
+    deleteAction: () => {}
 };
