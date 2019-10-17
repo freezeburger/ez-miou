@@ -7,7 +7,6 @@ import UserProfile from './app/components/user-profile/userprofile.component';
 import Avatar from './app/components/avatar/avatar.component';
 import Message from './app/components/message/message.component';
 import Button from './app/components/button/button.component';
-import RoomSearch from './app/components/room-search/roomsearch.component';
 
 const data = {
   key: 123456
@@ -15,7 +14,6 @@ const data = {
 
 ReactDOM.render(
   <div>
-    <RoomSearch rooms={["Room1", "Room2", "Room3"]} onSearchCompleted={(roomName) => console.log(roomName)}></RoomSearch>
     <UserProfile></UserProfile>
     <RoomCard></RoomCard>
     <Button></Button>
