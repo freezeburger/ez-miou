@@ -3,29 +3,20 @@ import ImageSliderProps from '../@prop-types/image-slider.props';
 import defaultProps from './image-slider.default-props';
 import './image-slider.component.css';
 
+
 const ImageSlider = (props:ImageSliderProps) => {
 
     const [count,setCount] = useState(0);
 
     // TODO Moche...
     setTimeout( () => {
-        setCount((count+1) % 3);
-    }, 1500);
+        setCount((count+1) % props.imageList.length);
+    }, props.delay);
 
     return (
         <div className="imageSlider">
             <img src={props.imageList[count]} alt=""/>
-           {/*  {
-                props.imageList.map( (image,i) => { 
-                    if ( i === count) {
-                        return(
-                            <img key={i.toString()} src={image} alt=""/>
-                        )
-                    }
-
-                }
-                )
-            } */}
+           {}
         </div>
     );
 
