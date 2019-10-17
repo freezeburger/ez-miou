@@ -11,16 +11,13 @@ const styles:CSSProperties = {
 };
 const Wrapper = ({ children }:any) => <div style={styles}>{children}</div>;
 
-/* Storie Title */
 storiesOf('Room Search', module)
-  .addDecorator(withKnobs) 
-  /* Sub Title */
-  // DDE Comment passer une fonction dans le knob ?
+  .addDecorator(withKnobs)
   .add('Try The Knobs', () => (
     <Wrapper>
       <RoomSearch
-        rooms={array('Rooms', ["Room1", "Room2", "Room3"], ',')}
-        onSearchCompleted={action('Room to search')}></RoomSearch>
+        rooms={array('Rooms (rooms)', ["Room1", "Room2", "Room3"], ',')}
+        onSearchCompleted={action('Room to search (onSearchCompleted)')}></RoomSearch>
     </Wrapper>
   ),
   { notes:'Component that allows the user to search for a room and trigger some action.'})
