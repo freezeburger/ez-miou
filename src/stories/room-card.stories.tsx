@@ -1,9 +1,7 @@
 import React, { CSSProperties } from "react";
 import { action } from "@storybook/addon-actions";
-import { default as Welcome } from "../app/components/me/me.component";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, boolean, number, color, object } from "@storybook/addon-knobs";
-import { withMarkdownNotes } from "@storybook/addon-notes";
+import { withKnobs, text, number, color, object } from "@storybook/addon-knobs";
 import RoomCard from "../app/components/room-card/roomcard.component";
 
 /* Component wrapper */
