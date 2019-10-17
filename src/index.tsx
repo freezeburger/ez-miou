@@ -15,16 +15,8 @@ const data = {
 
 ReactDOM.render(
   <div>
-    <RoomCloud></RoomCloud>
-    <UserProfile></UserProfile>
-    <RoomCard></RoomCard>
-    <Button></Button>
-    <Avatar />
-    <Message
-      date={12345}
-      content='[![](http://img.youtube.com/vi/Bkq1PAyGuZY/0.jpg)](http://www.youtube.com/watch?v=Bkq1PAyGuZY "AAAAAAAAAAAAAAAAAA")'
-    ></Message>
-    
+
+
   </div>,
   document.getElementById('root')
 );
