@@ -21,8 +21,8 @@ import './room-cloud.scss';
                     max: 15
                   }
                   return (
-                    <div>
-                      <RoomCard key={index} title={ room.name } user={ user }/>
+                    <div key={index}>
+                      <RoomCard title={ room.name } user={ user }/>
                     </div>
                   )
                 })
