@@ -23,11 +23,11 @@ const Button = (props: ButtonProps) => {
     /**
      * Function will handle click
      */
-    const handleClick = () => {
+    const handleClick = (event:any) => {
         snd.play();
         if (props.action) {
             //Throw an event for notify the user we clicked
-            props.action();
+            props.action(event);
         }else {
             //Throw an event to catch
             return;

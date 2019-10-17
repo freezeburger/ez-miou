@@ -4,11 +4,14 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserProfile from './app/components/user-profile/userprofile.component';
 import RoomCloud from './app/components/room-cloud/room-cloud.component';
+import Home from './app/containers/home/home.container';
 
 ReactDOM.render(
   <div>
-    <RoomCloud/>
-    <UserProfile></UserProfile>
+    {/* <RoomCloud/>
+    <UserProfile></UserProfile> */}
+
+    <Home password={'super*password'}></Home>
 
   </div>,
   document.getElementById('root')
