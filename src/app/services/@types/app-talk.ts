@@ -10,7 +10,7 @@ interface AppTalk {
         end?: number;
     }
     //List of message
-    listMessage: AppMessage[];
+    listMessage?: AppMessage[];
 }
 
 export default AppTalk;
