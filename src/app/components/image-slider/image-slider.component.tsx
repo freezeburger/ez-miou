@@ -6,16 +6,34 @@ import './image-slider.component.css';
 
 const ImageSlider = (props:ImageSliderProps) => {
 
-    const [count,setCount] = useState(0);
+    const [index,setIndex] = useState(0);
+    const [LR, setLR] = useState(1);
+    const [myTimeout, setMyTimeout] = useState(0)
 
+    //console.log('inside ImageSlider func');
+    if (myTimeout) {
+        clearTimeout(myTimeout)
+    }
     // TODO Moche...
-    setTimeout( () => {
-        setCount((count+1) % props.imageList.length);
+    let newTimeout = setTimeout( () => {
+        if(props.loop) {
+            setIndex((index+1) % props.imageList.length);
+        } else {
+            // console.log('unloop mode');
+            // let nextIndex = index+LR;
+            // setIndex(nextIndex);
+            // let tLR = (nextIndex === 0) ? 1 : LR;
+            // tLR = (nextIndex === (props.imageList.length - 1)) ? -1 : LR
+            // setLR(tLR);
+
+        }
     }, props.delay);
+
+    //setMyTimeout(newTimeout);
 
     return (
         <div className="imageSlider">
-            <img src={props.imageList[count]} alt=""/>
+            <img src={props.imageList[index]} alt=""/>
            {}
         </div>
     );
