@@ -11,7 +11,7 @@ export interface TalkEditorState {
 /**
  * Component used to display the input sending messages
  */
-class TalkEditor extends React.Component<TalkEditorProps, TalkEditorState>{
+class TalkEditor extends React.Component<any, TalkEditorState>{
 
     public state: TalkEditorState = {
         message: ''

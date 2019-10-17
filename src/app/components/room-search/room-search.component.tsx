@@ -32,16 +32,16 @@ class RoomSearch extends React.Component<RoomSearchProps, RoomSearchState> {
     };
 
     render() {
+        const searchTerm = this.state.searchTerm;
         return (
             <fieldset>
                 <input
-                    value={this.state.searchTerm}
+                    value={searchTerm}
                     onChange={this.handleChange} />
 
                 <Button action={this.launchSearch} icon={<FaSearch />}>
                     <span>Search</span>
                 </Button>
-
             </fieldset>
         );
     }

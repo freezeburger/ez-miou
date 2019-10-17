@@ -1,7 +1,7 @@
 import { AppUserStatus } from '../../services/@types/app-user';
 import RoomCloudProps from '../@prop-types/room-cloud.props';
 
-const defaultRoomCloudProps =  {
+const defaultRoomCloudProps: RoomCloudProps =  {
     roomCards: [
       {
           // Identifier of the room

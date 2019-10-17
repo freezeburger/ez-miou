@@ -7,7 +7,7 @@ interface RoomCreatorProps {
      * Function called when the room data is validated
      * and the room can be created.
      */
-    onCreationRequested(roomName: string): Function;
+    onCreationRequested(roomName: string): void;
 }
 
 export default RoomCreatorProps;

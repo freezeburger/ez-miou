@@ -15,7 +15,7 @@ interface AppRoom {
     subject: string;
 
     // The talk happening in this room
-    talk: AppTalk;
+    talk?: AppTalk;
 
     // Contains the users that are currently in this room
     users: Array<AppUser>;

@@ -9,12 +9,12 @@ import defaultRoomCloudProps from './room-cloud.default-props';
 
    return (
     <div>
-        { roomList.map(function(room) {
+        { roomList.map(function(room, index) {
           const user: any = {
             counter: room.users.length,
             max: 15
           }
-            return <RoomCard title={ room.name }
+            return <RoomCard key={index} title={ room.name }
              user={ user }/>
           })
         }

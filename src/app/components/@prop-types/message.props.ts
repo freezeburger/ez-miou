@@ -3,7 +3,7 @@ interface MessageProps {
   id?: string;
   /** Text of the message */
   content: string;
-  /** Date when the message was posted (Timestamp) */
+  /** Timestamp, if only there was some kind of prop-type designed to store Date... man that would be nice... */
   date: number;
 }
 
