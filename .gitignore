@@ -1,6 +1,7 @@
 # Custom 
 public/
 src/index.tsx
+!public/souris.*
 
 # Logs
 logs
