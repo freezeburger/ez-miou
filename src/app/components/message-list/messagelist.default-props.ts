@@ -4,27 +4,27 @@ import { AppUserStatus } from "../../services/@types/app-user";
 const defaultProps:MessageListProps = {
     messages: [
         {
-            date: 123,
+            date: 1571298866,
             sender: {
                 id: 1,
-                name: 'toto',
-                email: 'toto@gmail.com',
+                name: 'Claude',
+                email: 'claude123@gmail.com',
                 status: AppUserStatus.ONLINE
             },
             content: {
-                message: 'Hello mister...'
+                message: 'Hello mister... how are you ?'
             }
         },
         {
-            date: 456,
+            date: 1571298905,
             sender: {
                 id: 2,
-                name: 'tatat',
-                email: 'tata@gmail.com',
+                name: 'Marcel',
+                email: 'marcel567@gmail.com',
                 status: AppUserStatus.ONLINE
             },
             content: {
-                message: 'Hi guy !!!'
+                message: 'Hi guy !!! Fine, thank you very much...'
             }
         }
     ]
