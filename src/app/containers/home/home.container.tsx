@@ -4,6 +4,7 @@ import { BtnTypes } from '../../components/@prop-types/button.props';
 import { FaLock } from 'react-icons/fa';
 import './home.scss';
 import Dispatcher from '../../services/dispatcher/dispatcher.service';
+import GlobalEmitter from '../../services/event-emitters/global-emitter.service';
 import { AppActionTypes, AppDispatcherAction } from '../../services/@types/app-dispatcher';
 
 
@@ -26,6 +27,7 @@ inputRef: any;
 history: any;
 
 private dispatcher = Dispatcher;
+private globalEmitter = GlobalEmitter;
 
 constructor(props:any) {
     super(props);
@@ -62,7 +64,14 @@ authorize(e?:any) {
         }
     };
 
-    this.dispatcher.dispatch(action).then( wtf => console.log(wtf) );
+    this.dispatcher.dispatch(action)
+                   .then( action => {
+                       
+                       // console.log(action);
+                       this.globalEmitter.emit('EVT_USER_CONNECTED',action.result);
+
+                    })
+                   .catch( err => alert('Nope !'))
 }
 
 handleSubmit = (event:any) =>{
