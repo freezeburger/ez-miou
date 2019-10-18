@@ -1,0 +1,46 @@
+{
+    "rooms": [{
+        "id":1,
+        "name": "Java Talk",
+        "subject": "Java totototo",
+        "color": "red",
+        "usersId": [1,2,3]
+    }],
+    "users":[
+    {
+      "id": 1,
+      "name": "Lisa",
+      "email": "marge@blabla.com",
+      "status": "ONLINE"
+    },
+    {
+      "id": 2,
+      "name": "ELisa",
+      "email": "marge2@blabla.com",
+      "status": "ONLINE"
+    },
+    {
+      "id": 3,
+      "name": "Lisa",
+      "email": "marge@blabla.com",
+      "status": "BUSY"
+    },
+    {
+      "id": 4,
+      "name": "Lisa",
+      "email": "marge@blabla.com",
+      "status": "ONLINE"
+    },
+    {
+      "id": 5,
+      "name": "Lisa",
+      "email": "marge@blabla.com",
+      "status": "ONLINE"
+    },
+    {
+      "id": 6,
+      "name": "Homer",
+      "email": "homer@blabla.com",
+      "status": "BUSY"
+    }
+  ]}
