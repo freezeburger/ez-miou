@@ -19,8 +19,8 @@ export class UserManager implements AppManager<AppUser> {
     all?: boolean | undefined
   ): Promise<AppUser | AppUser[]>;
   public read(id?: any, all?: any): Promise<AppUser | AppUser[]> {
-    if (typeof id === 'number') {
-        return Promise.resolve(MockUser);
+    if (typeof id === "number") {
+      return Promise.resolve(MockUser);
     }
     return Promise.resolve([MockUser]);
   }
