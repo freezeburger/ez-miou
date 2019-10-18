@@ -25,8 +25,7 @@ import './room-cloud.scss';
                   max: 15
                 }
                 return (
-                  <div key={index}>
-                    {index}
+                  <div key={Math.floor(Math.random() * 10000)}>
                     <RoomCard title={ room.name } user={ user }/>
                   </div>
                 )
