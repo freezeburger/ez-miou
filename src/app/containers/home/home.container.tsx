@@ -9,7 +9,7 @@ import { AppActionTypes } from '../../services/@types/app-dispatcher';
 
 /** state */
 interface IState {
-    password: string;
+    password?: string;
 }
 
 
