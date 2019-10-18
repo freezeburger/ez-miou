@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../components/button/button.component";
+import Dispatcher from "../../services/dispatcher/dispatcher.service";
 
 class Home extends React.Component<any, any> {
   constructor(props: any) {
@@ -10,6 +11,8 @@ class Home extends React.Component<any, any> {
       error: ""
     };
   }
+
+  private dispatcher = Dispatcher;
 
   /**
    * Bind inputs

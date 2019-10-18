@@ -61,4 +61,4 @@ class Dispatcher implements AppDispatcher {
   }
 }
 
-export default Dispatcher;
+export default new Dispatcher();
