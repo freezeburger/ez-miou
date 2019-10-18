@@ -11,6 +11,7 @@ class Dispatcher implements AppDispatcher {
 
   private userService = UserManager;
   constructor() {
+      //todo delete
     window['appHistory'] = this.getHistory.bind(this);
   }
 

@@ -3,10 +3,11 @@ import Button from '../../components/button/button.component';
 import { BtnTypes } from '../../components/@prop-types/button.props';
 import { AppActionTypes } from '../../services/@types/app-dispatcher';
 import Dispatcher from '../../services/dispatcher/dispatcher.service';
-import { action } from '@storybook/addon-actions';
+import GlobalEmitter from '../../services/event-emitters/global-emitter.service';
 
 class AuthSignin extends React.Component {
-    private dispatcher = Dispatcher;
+  private dispatcher = Dispatcher;
+  private globalEmitter = GlobalEmitter;
   constructor(props: any) {
     super(props);
   }
@@ -16,26 +17,34 @@ class AuthSignin extends React.Component {
 
   componentWillUnmount() {}
 
-
-  authorize = (e?:any) => {
-      const action = {
-          type: AppActionTypes.USER_LOGIN,
-          data: {
-              name: 'toto',
-              email: 'toto@mail.com'
-
-          }
-        }
-      this.dispatcher.dispatch(action).then((wtf) => {console.log(wtf)});
-  }
+  authorize = (e?: any) => {
+    const action = {
+      type: AppActionTypes.USER_LOGIN,
+      data: {
+        name: 'toto',
+        email: 'toto@mail.com'
+      }
+    };
+    this.dispatcher
+      .dispatch(action)
+      .then(action => {
+        console.log(action);
+        this.globalEmitter.emit('EVT_USER_CONNECTED', action.result);
+      })
+      .catch(err => console.log('Nope'));
+  };
   handleSubmit = (event: any) => {
     event.preventDefault();
     this.authorize();
-  }
+  };
 
   render() {
     return (
-      <form onSubmit={(event) => {this.handleSubmit(event)}}>
+      <form
+        onSubmit={event => {
+          this.handleSubmit(event);
+        }}
+      >
         <div className="form-group">
           <label>Email address</label>
           <input
