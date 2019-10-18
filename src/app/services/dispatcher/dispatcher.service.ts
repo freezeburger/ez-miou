@@ -2,11 +2,12 @@ import AppDispatcher, {AppDispatcherAction, AppActionTypes} from "../@types/app-
 
 declare const window:any;
 
-export class Dispatcher implements AppDispatcher{
+class Dispatcher implements AppDispatcher{
 
     private _history:any[] = [];
 
     constructor() {
+        console.warn(Date.now())
         window['getHistory'] = this.getHistory.bind(this)
     }
 
@@ -15,6 +16,8 @@ export class Dispatcher implements AppDispatcher{
     }
 
     dispatch(action: AppDispatcherAction): Promise<AppDispatcherAction> {
+
+        this._history.push( Object.assign({time:Date.now()},action))
         
         switch (action.type) {
 
@@ -59,4 +62,4 @@ export class Dispatcher implements AppDispatcher{
 }
 
 
-export default Dispatcher;
+export default new Dispatcher();

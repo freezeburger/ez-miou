@@ -13,7 +13,7 @@ const MockUser:AppUser = {
 export class UserManager implements AppManager<AppUser>{
 
     public create(options: any): Promise<AppUser> {
-        Promise.resolve(MockUser);
+        return Promise.resolve(MockUser);
     }   
     
     public read(id: number): Promise<AppUser>;
@@ -21,26 +21,27 @@ export class UserManager implements AppManager<AppUser>{
     public read(id?: number, all?: boolean): Promise<AppUser | AppUser[]>;
     public read(id?: any, all?: any): Promise<AppUser | AppUser[]> {
         if(typeof id === 'number') {
-            return Promise.resolve(MockUser)
+            return Promise.resolve(MockUser);
         }
+        return Promise.resolve([MockUser]);
     }
 
     public update(target: AppUser, modifications: AppUser): Promise<AppUser> {
-        throw new Error("Method not implemented.");
+        return Promise.resolve(MockUser);
     }
 
     public destroy(target: AppUser): Promise<AppUser> {
-        throw new Error("Method not implemented.");
+        return Promise.resolve(MockUser);
     }
 
     // Abstraction
 
     public login(user:Partial<AppUser>) {
-
+        return Promise.resolve(MockUser);
     }
 
     public logout(user:AppUser) {
-        
+        return Promise.resolve(MockUser);
     }
 
 
