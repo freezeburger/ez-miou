@@ -1,5 +1,6 @@
 import AppManager from '../@types/app-manager';
 import AppUser, { AppUserStatus } from '../@types/app-user';
+import StorageManager from '../storage/storage-manager.service';
 
 
 const MockUser: AppUser = {
@@ -11,6 +12,7 @@ const MockUser: AppUser = {
 }
 
 export class UserManager implements AppManager<AppUser> {
+    private storage = StorageManager;
   create(options: any): Promise<AppUser> {
     return Promise.resolve(MockUser);
   }
@@ -36,7 +38,7 @@ export class UserManager implements AppManager<AppUser> {
   }
   //ABstract
   public login(user: Partial<AppUser>) {
-    return Promise.resolve(MockUser);
+    return this.storage.read(undefined, true);
   }
   public logout(user: AppUser){
     return Promise.resolve(MockUser);

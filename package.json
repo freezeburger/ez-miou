@@ -39,6 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:api": "json-server ./API/data.json -p 5050 -w",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
