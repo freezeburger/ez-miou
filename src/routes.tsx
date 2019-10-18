@@ -4,8 +4,6 @@ import Home from './app/containers/home/home.container';
 import Room from "./app/containers/room/room.container";
 import GlobalEmitter from './app/services/event-emitters/global-emitter.service';
 import AppUser from "./app/services/@types/app-user";
-import { thisExpression } from "@babel/types";
-
 
 const Routes = () => {
   return (
