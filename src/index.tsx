@@ -7,8 +7,8 @@ import Room from './app/containers/room/room.container';
 
 ReactDOM.render(
   <div>
-{/*  <Home/> */}
-    <Room/> 
+ <Home/>
+ {/*    <Room/>  */}
 {/*     <Talk/> */}
   </div>,
   document.getElementById('root')
