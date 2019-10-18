@@ -1,9 +1,10 @@
 import MessageListProps from "./message-list.props";
 import UserProps from "./user-props";
+import AppMessage from "../../services/@types/app-message";
 
 export interface UserProfileProps {
     user: UserProps
-    initialMessages: MessageListProps;
+    initialMessages: AppMessage;
     editAction?: Function;
     deleteAction?: Function;
 }
