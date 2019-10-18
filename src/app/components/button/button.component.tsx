@@ -26,9 +26,10 @@ const Button = (props: ButtonProps) => {
     /**
      * Function will handle click
      */
-    const handleClick = () => {
+    const handleClick = (event: any) => {
         snd.play();
         if (props.action) {
+            event.preventDefault();
             //Throw an event for notify the user we clicked
             props.action();
         }else {
@@ -39,11 +40,11 @@ const Button = (props: ButtonProps) => {
     }
 
     const onHover = (event:any) => {
-        let currentStyle:String='top:'+ (Math.random()*200)+'px ;right:'+ (Math.random()*200)+'px ; position: absolute';
+        //let currentStyle:String='top:'+ (Math.random()*200)+'px ;right:'+ (Math.random()*200)+'px ; position: absolute';
         // currentStyle.top = (Math.random()*200) + "px";
         // currentStyle.right = (Math.random()*200) + "px";
         props.actionOnHover && props.actionOnHover();
-        event.target.style = currentStyle;
+        //event.target.style = currentStyle;
     }
 
 

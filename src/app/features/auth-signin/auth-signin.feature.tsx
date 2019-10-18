@@ -12,15 +12,11 @@ interface AuthSigninState {
 }
 
 class AuthSignin extends React.Component<AuthSigninProps, AuthSigninState>{
-     
+
     state = {
         pseudo: '',
         password: ''
     };
-
-    constructor(props:any){
-        super(props);
-    }
 
     handleChangePseudo = (e: any) => {
         this.setState({ pseudo: e.target.value });

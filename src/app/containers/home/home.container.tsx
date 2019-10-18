@@ -1,25 +1,21 @@
 import React from 'react';
 import Auth from '../../features/auth/auth.feature';
 
- class Home extends React.Component{
-     
-    constructor(props:any){
-         super(props);
-     }
+class Home extends React.Component {
 
-     //LifeCycle
-     componentDidMount(){}
+    //LifeCycle
+    componentDidMount() { }
 
-     componentWillUnmount(){}
+    componentWillUnmount() { }
 
-     render(){
-         return (
+    render() {
+        return (
             <React.Fragment>
                 <h1>Home</h1>
                 <Auth />
             </React.Fragment>
-         );
-     }
- }
+        );
+    }
+}
 
 export default Home;

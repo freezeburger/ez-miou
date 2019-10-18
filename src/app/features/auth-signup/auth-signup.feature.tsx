@@ -21,10 +21,6 @@ class AuthSignup extends React.Component<AuthSignupProps, AuthSignupState>{
         passwordConfirm: ''
     };
 
-    constructor(props:any){
-        super(props);
-    }
-
     // This handler is called whenever any field changes
     handleChangeOf = (name:string) => (event:any) => this.setState( { [name]: event.target.value });
 

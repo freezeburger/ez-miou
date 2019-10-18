@@ -3,7 +3,6 @@ import Avatar from '../../components/avatar/avatar.component';
 import TalkEditor from '../../components/talk-editor/talk-editor.component';
 import UserList from '../../components/user-list/user-list.component';
 import MessageList from '../../components/message-list/messagelist.component';
-import TalkHeader from '../../components/talk-header/talkheader.component';
 
 class Talk extends React.Component{
     
