@@ -3,6 +3,8 @@ import Button from '../../components/button/button.component';
 import { BtnTypes } from '../../components/@prop-types/button.props';
 import { FaLock } from 'react-icons/fa';
 import './home.scss';
+import Dispatcher from '../../services/dispatcher/dispatcher.service';
+import { AppActionTypes } from '../../services/@types/app-dispatcher';
 
 
 /** state */
@@ -23,6 +25,8 @@ pswdRef:any;
 inputRef: any;
 history: any;
 
+private dispatcher = Dispatcher;
+
 constructor(props:any) {
     super(props);
     const { history } = props;
@@ -39,41 +43,35 @@ componentDidMount(){
     this.focusTextInput();
 }
 
-/**  */
 focusTextInput = () => {
     // Focus the text input using the raw DOM API
     if (this.pswdRef) this.pswdRef.current.focus();
 }
 
-componentWillUnmount() {
-
-}
-
 componentDidUpdate(prevProps: any, prevState: any) {
-    console.log(prevProps, prevState, this.state)
-    
-    if (this.state.authorized) {
-        this.history.push('/room')
-    }
+    console.log(prevProps, prevState, this.state);
 }
 
-authorize(e:any) {
-    console.log(this.inputRef.current.value);
-    let password = this.pswdRef.current.value;
-    console.log(password);
-    let auth = password === this.state.password;
-    this.setState({
-        authorized: auth
-    });
+authorize(e?:any) {
+    alert(1)
+    this.dispatcher.dispatch({
+        type:AppActionTypes.USER_LOGIN,
+        data:{
+            name:this.inputRef.current.value,
+            email:this.pswdRef.current.value
+        }
+    })
 }
 
 handleSubmit(event:any) {
     event.preventDefault();
+    this.authorize();
 }
 
 
 render(){
     const icon = <FaLock/>;
+
     const formAuth = (
         <div className="main_container">
             <div className="circle">EV-MIAOU</div>
@@ -93,6 +91,7 @@ render(){
             </div>
         </div>
     );
+    
     return (formAuth)
 }
 }
