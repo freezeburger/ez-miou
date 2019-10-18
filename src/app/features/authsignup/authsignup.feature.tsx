@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../components/button/button.component';
 
  class AuthSignup extends React.Component{
      
@@ -12,10 +13,8 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return (<div>AuthSignup</div>)
+         return <Button cssClassNames={["sm-btn"]}><span>Signup</span></Button>
      }
  }
-
-
- export default AuthSignup;
+export default AuthSignup;
 

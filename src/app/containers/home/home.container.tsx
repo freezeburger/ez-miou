@@ -1,6 +1,7 @@
 import React from 'react';
+import Auth from '../../features/auth/auth.feature';
 
- class Home extends React.Component{
+ class Home extends React.Component<any>{
      
     constructor(props:any){
          super(props);
@@ -12,7 +13,7 @@ import React from 'react';
      componentWillUnmount(){}
 
      render(){
-         return '<div>Home</div>'
+         return <React.Fragment><Auth></Auth></React.Fragment>
      }
  }
 

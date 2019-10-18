@@ -11,13 +11,7 @@ import './room-cloud.scss';
 
    return (
     <div className="container-fluid">
-        <div className="col-12 miou-cloud-container">
-          <TagCloud
-            style={{
-              fontFamily: 'sans-serif',
-              fontSize: 30,
-              padding: 5,
-            }}>
+        <div className="row miou-cloud-container">
             { 
               roomList.map(function(room, index) {
                 const user: any = {
@@ -26,13 +20,11 @@ import './room-cloud.scss';
                 }
                 return (
                   <div key={index}>
-                    {index}
                     <RoomCard title={ room.name } user={ user }/>
                   </div>
                 )
               })
             }
-          </TagCloud>
         </div>
     </div>
    );

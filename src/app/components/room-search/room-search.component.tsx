@@ -2,7 +2,6 @@ import React from 'react';
 import RoomSearchProps from '../@prop-types/room-search.props';
 import Button from '../button/button.component';
 import { FaSearch } from 'react-icons/fa';
-import defaultProps from './room-search.default-props';
 
 /**
  * The state contains the term being searched
@@ -15,9 +14,7 @@ interface RoomSearchState {
  * Component that allows the user to search for a room and trigger some action.
  */
 class RoomSearch extends React.Component<RoomSearchProps, RoomSearchState> {
-
-    static defaultProps = defaultProps;
-
+    
     state = {
         searchTerm: ''
     };

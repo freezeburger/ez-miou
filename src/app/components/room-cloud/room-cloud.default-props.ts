@@ -5,7 +5,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
     roomCards: [
       {
           // Identifier of the room
-          id:8,
+          id: 1,
           name: 'Java Talk',
           subject: 'Java talk',
           // Contains the users that are currently in this room
@@ -32,7 +32,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
       },
       {
         // Identifier of the room
-        id: 7,
+        id: 1,
         name: 'Java poo',
         subject: 'Java poo',
         // Contains the users that are currently in this room
@@ -98,7 +98,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
       },
       {
         // Identifier of the room
-        id: 2,
+        id: 1,
         name: 'Java poo',
         subject: 'Java poo',
         // Contains the users that are currently in this room
@@ -125,7 +125,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
       },
       {
         // Identifier of the room
-        id: 3,
+        id: 1,
         name: 'Java poo',
         subject: 'Java poo',
         // Contains the users that are currently in this room
@@ -145,7 +145,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
         ]
       },      {
         // Identifier of the room
-        id: 4,
+        id: 1,
         name: 'Java poo',
         subject: 'Java poo',
         // Contains the users that are currently in this room
@@ -165,7 +165,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
         ]
       },      {
         // Identifier of the room
-        id: 5,
+        id: 1,
         name: 'Java poo',
         subject: 'Java poo',
         // Contains the users that are currently in this room
@@ -185,7 +185,7 @@ const defaultRoomCloudProps: RoomCloudProps =  {
         ]
       },      {
         // Identifier of the room
-        id: 6,
+        id: 1,
         name: 'Java poo',
         subject: 'Java poo',
         // Contains the users that are currently in this room
