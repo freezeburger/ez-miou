@@ -1,81 +1,100 @@
-import React from "react";
-import Button from "../../components/button/button.component";
-import Dispatcher from "../../services/dispatcher/dispatcher.service";
+import React, { useRef } from 'react';
+import Button from '../../components/button/button.component';
+import { BtnTypes } from '../../components/@prop-types/button.props';
+import { FaLock } from 'react-icons/fa';
+import './home.scss';
+import Dispatcher from '../../services/dispatcher/dispatcher.service';
+import { AppActionTypes } from '../../services/@types/app-dispatcher';
 
-class Home extends React.Component<any, any> {
-  constructor(props: any) {
+
+/** state */
+interface IState {
+    password: string;
+}
+
+
+class Home extends React.Component<IState>{
+
+state = {
+    authorized: false,
+    password: 'super*password',
+};
+ 
+formRef:any;
+pswdRef:any;
+inputRef: any;
+history: any;
+
+private dispatcher = Dispatcher;
+
+constructor(props:any) {
     super(props);
-    this.state = {
-      login: "",
-      password: "",
-      error: ""
-    };
-  }
+    const { history } = props;
+    this.history = history;
 
-  private dispatcher = Dispatcher;
+    this.formRef = React.createRef();
+    this.inputRef = React.createRef();
+    this.pswdRef = React.createRef();
+    this.authorize = this.authorize.bind(this);
+}
 
-  /**
-   * Bind inputs
-   * @param event
-   */
-  private changeState = (event: any) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.id;
+//LifeCycle
+componentDidMount(){
+    this.focusTextInput();
+}
 
-    this.setState({
-      [name]: value
-    });
-  };
+focusTextInput = () => {
+    // Focus the text input using the raw DOM API
+    if (this.pswdRef) this.pswdRef.current.focus();
+}
 
-  /**
-   * Log User
-   */
-  private login = () => {
-    if (this.state.login && this.state.password) {
-      this.setState({ error: "" });
-    } else {
-      this.setState({ error: "unknow User" });
-    }
-  };
+componentDidUpdate(prevProps: any, prevState: any) {
+    console.log(prevProps, prevState, this.state);
+}
 
-  render() {
-    return (
-      <div
-        style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}
-      >
-        <h1>Home</h1>
-        <div className="row">
-          <span className="col-md-4">Login</span>
-          <span className="col-md-4">
-            <input
-              type="text"
-              id="login"
-              value={this.state.login}
-              onChange={this.changeState}
-            />
-          </span>
+authorize(e?:any) {
+    alert(1)
+    this.dispatcher.dispatch({
+        type:AppActionTypes.USER_LOGIN,
+        data:{
+            name:this.inputRef.current.value,
+            email:this.pswdRef.current.value
+        }
+    })
+}
+
+handleSubmit(event:any) {
+    event.preventDefault();
+    this.authorize();
+}
+
+
+render(){
+    const icon = <FaLock/>;
+
+    const formAuth = (
+        <div className="main_container">
+            <div className="circle">EV-MIAOU</div>
+            <div className="content">
+                <form ref={this.formRef} onSubmit={this.handleSubmit}>
+                        <label className="label">Email</label>
+                        <input ref={this.inputRef} type="email" className="input_content" placeholder="Email Id"/>
+                        <label className="label">Password</label>
+                        <input ref={this.pswdRef} type="password" className="input_content" placeholder="Password"/>
+                        <Button icon={icon} action={this.authorize} btnTypes={BtnTypes.PRIMARY} cssClassNames={['input_content_button']}>
+                            <span>Login</span>
+                        </Button>
+                </form> 
+            </div>
+            <div className="help">
+                <a href="#"><p>Lost your Password</p></a>
+            </div>
         </div>
-        <div className="row">
-          <span className="col-md-4">Password</span>
-          <span className="col-md-4">
-            <input
-              type="password"
-              id="password"
-              value={this.state.password}
-              onChange={this.changeState}
-            />
-          </span>
-        </div>
-        <div>
-          <br />
-          <Button action={this.login}></Button>
-          <br />
-        </div>
-        <div style={{ color: "red" }}>{this.state.error}</div>
-      </div>
     );
-  }
+    
+    return (formAuth)
+}
 }
 
 export default Home;
+// export default withRouter(Home)

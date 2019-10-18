@@ -6,6 +6,8 @@ import Room from './app/containers/room/room.container';
 import Home from './app/containers/home/home.container';
 import Talk from './app/containers/talk/talk.container';
 
+import Routes from "./routes";
+
 ReactDOM.render(
   <div>
     <Home></Home>
