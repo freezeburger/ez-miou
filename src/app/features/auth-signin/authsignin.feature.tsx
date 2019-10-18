@@ -17,7 +17,7 @@ class AuthSignin extends React.Component {
   componentWillUnmount() {}
 
 
-  authorize(e?:any) {
+  authorize = (e?:any) => {
       const action = {
           type: AppActionTypes.USER_LOGIN,
           data: {
@@ -28,7 +28,7 @@ class AuthSignin extends React.Component {
         }
       this.dispatcher.dispatch(action).then((wtf) => {console.log(wtf)});
   }
-  handleSubmit(event: any) {
+  handleSubmit = (event: any) => {
     event.preventDefault();
     this.authorize();
   }
