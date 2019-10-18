@@ -23,7 +23,7 @@ const RoomCard = (props: RoomCardProps) => {
   const boundaries = {
     width: '150px',
     height: '150px',
-    transform:`scale(${1 / 0 - (props.user.max/props.user.counter)})`
+    transform:`scale(${ 1 + ( (props.user.counter/props.user.max))}, ${ 1 + ( (props.user.counter/props.user.max))})`
   };
 
 
@@ -33,7 +33,7 @@ const RoomCard = (props: RoomCardProps) => {
       onClick={handleClick}
       style={styles}
     >
-      <div className="card-body" style={{color:'white', background: props.color , border: "1px solid " + props.color, ...boundaries }}>
+      <div className="card-body" style={{color:'white', background: props.color , border: "1px solid black", ...boundaries }}>
         <h5 className="card-title">{props.title.toUpperCase()}</h5>
         <div>
           Users : {props.user.counter} {/* props.user.max */}
