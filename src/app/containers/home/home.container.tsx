@@ -4,7 +4,7 @@ import { BtnTypes } from '../../components/@prop-types/button.props';
 import { FaLock } from 'react-icons/fa';
 import './home.scss';
 import Dispatcher from '../../services/dispatcher/dispatcher.service';
-import { AppActionTypes } from '../../services/@types/app-dispatcher';
+import { AppActionTypes, AppDispatcherAction } from '../../services/@types/app-dispatcher';
 
 
 /** state */
@@ -53,7 +53,8 @@ componentDidUpdate(prevProps: any, prevState: any) {
 }
 
 authorize(e?:any) {
-    const action = {
+    
+    const action:AppDispatcherAction = {
         type:AppActionTypes.USER_LOGIN,
         data:{
             name:this.inputRef.current.value,
@@ -61,10 +62,10 @@ authorize(e?:any) {
         }
     };
 
-    this.dispatcher.dispatch(action).then( wtf => console.log(wtf) )
+    this.dispatcher.dispatch(action).then( wtf => console.log(wtf) );
 }
 
-handleSubmit(event:any) {
+handleSubmit = (event:any) =>{
     event.preventDefault();
     this.authorize();
 }

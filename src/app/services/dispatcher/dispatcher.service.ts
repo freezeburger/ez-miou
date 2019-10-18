@@ -1,6 +1,5 @@
 import AppDispatcher, {AppDispatcherAction, AppActionTypes} from "../@types/app-dispatcher";
 import UserManager from "../logic/user-manager.service";
-import { actions } from "@storybook/addon-actions";
 
 declare const window:any;
 
