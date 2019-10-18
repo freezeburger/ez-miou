@@ -2,7 +2,7 @@ import React from 'react';
 
 class Room extends React.Component{
     
-constructor(props:any){
+    constructor(props:any){
         super(props);
     }
 
@@ -12,7 +12,11 @@ constructor(props:any){
     componentWillUnmount(){}
 
     render(){
-        return '<div>Room</div>'
+        return (
+            <>
+    
+            </>
+        )
     }
 }
 
