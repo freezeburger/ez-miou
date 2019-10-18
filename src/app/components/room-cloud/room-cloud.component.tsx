@@ -12,7 +12,7 @@ import './room-cloud.scss';
    return (
     <div className="container-fluid">
         <div className="col-12 miou-cloud-container">
-          <TagCloud
+          <TagCloud key={'tagCloud' + Math.random()}
             style={{
               fontFamily: 'sans-serif',
               fontSize: 30,
@@ -25,7 +25,7 @@ import './room-cloud.scss';
                   max: 15
                 }
                 return (
-                  <div key={Math.floor(Math.random() * 10000)}>
+                  <div key={'roomList-' + index}>
                     <RoomCard title={ room.name } user={ user }/>
                   </div>
                 )

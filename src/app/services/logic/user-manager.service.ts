@@ -12,7 +12,14 @@ const MockUser:AppUser = {
 class UserManager implements AppManager<AppUser> {
 
     create(options: any): Promise<AppUser> {
-        return Promise.resolve(MockUser);
+        const user:AppUser = {
+            avatarUrl: MockUser.avatarUrl,
+            email: options.email || MockUser.email,
+            id: MockUser.id,
+            name: MockUser.name,
+            status: MockUser.status
+        }
+        return Promise.resolve(user);
     }    
     
     read(id: number): Promise<AppUser>;
@@ -37,8 +44,14 @@ class UserManager implements AppManager<AppUser> {
 
     // Abstraction
 
-    public login(user:Partial<AppUser>){}
-    public logout(user: Partial<AppUser>) {}
+    public login(user:Partial<AppUser>): Promise<AppUser> {
+        return Promise.resolve(MockUser);
+    }
+
+    public logout(user: Partial<AppUser>): Promise<AppUser> {
+        return Promise.resolve(MockUser);
+    }
 }
 
-export default UserManager;
+const userManager = new UserManager();
+export default userManager;

@@ -1,11 +1,15 @@
 import AppDispatcher, { AppDispatcherAction, AppActionTypes } from '../@types/app-dispatcher';
+import UserManager from '../logic/user-manager.service';
 
 declare const window: any;
 
 class Dispatcher implements AppDispatcher {
   private _history: any[] = [];
 
+  private userService = UserManager;
+
   constructor() {
+    console.warn(Date.now());
     window['getHistory'] = this.getHistory.bind(this);
   }
 
@@ -15,13 +19,6 @@ class Dispatcher implements AppDispatcher {
 
   dispatch(action: AppDispatcherAction): Promise<AppDispatcherAction> {
     this._history.push(Object.assign({ time: Date.now() }, action));
-
-    // TO test
-    /*
-    if (Object.values(AppActionTypes).includes(action.type)) {
-        return Promise.resolve(action);
-    }
-    */
 
     switch (action.type) {
       case AppActionTypes.MESSAGE_INPUT:
@@ -46,7 +43,10 @@ class Dispatcher implements AppDispatcher {
         return Promise.resolve(action);
 
       case AppActionTypes.USER_LOGIN:
-        return Promise.resolve(action);
+        return this.userService.login(action.data).then(res => {
+          action.result = res;
+          return action;
+        });
 
       case AppActionTypes.USER_LOGOUT:
         return Promise.resolve(action);
@@ -65,4 +65,5 @@ class Dispatcher implements AppDispatcher {
   }
 }
 
-export default Dispatcher;
+const dispatcher = new Dispatcher();
+export default dispatcher;
