@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import Button from '../../components/button/button.component';
 import { BtnTypes } from '../../components/@prop-types/button.props';
+import { AppActionTypes } from '../../services/@types/app-dispatcher';
+import Dispatcher from '../../services/dispatcher/dispatcher.service';
+import { action } from '@storybook/addon-actions';
 
 class AuthSignin extends React.Component {
     private dispatcher = Dispatcher;
@@ -15,9 +18,15 @@ class AuthSignin extends React.Component {
 
 
   authorize(e?:any) {
-      this.dispatcher.dispatch({
-          
-      })
+      const action = {
+          type: AppActionTypes.USER_LOGIN,
+          data: {
+              name: 'toto',
+              email: 'toto@mail.com'
+
+          }
+        }
+      this.dispatcher.dispatch(action).then((wtf) => {console.log(wtf)});
   }
   handleSubmit(event: any) {
     event.preventDefault();
@@ -26,7 +35,7 @@ class AuthSignin extends React.Component {
 
   render() {
     return (
-      <form onSubmit={() => {}}>
+      <form onSubmit={(event) => {this.handleSubmit(event)}}>
         <div className="form-group">
           <label>Email address</label>
           <input

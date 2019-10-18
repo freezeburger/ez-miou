@@ -35,8 +35,12 @@ export class UserManager implements AppManager<AppUser> {
     return Promise.resolve(MockUser);
   }
   //ABstract
-  public login(user: Partial<AppUser>) {}
-  public logout(user: AppUser){}
+  public login(user: Partial<AppUser>) {
+    return Promise.resolve(MockUser);
+  }
+  public logout(user: AppUser){
+    return Promise.resolve(MockUser);
+  }
 }
 
-export default UserManager;
+export default new UserManager();
