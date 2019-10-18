@@ -13,7 +13,8 @@ export interface AppDispatcherAction {
 }
 
 export enum AppActionTypes {
-
+    USER_LOGIN = 'USER_LOGIN',
+    USER_ROOM_ENTER = 'USER_ROOM_ENTER'
 }
 
 export default AppDispatcher;
