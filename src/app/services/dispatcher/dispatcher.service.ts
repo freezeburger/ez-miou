@@ -16,6 +16,13 @@ class Dispatcher implements AppDispatcher {
   dispatch(action: AppDispatcherAction): Promise<AppDispatcherAction> {
     this._history.push(Object.assign({ time: Date.now() }, action));
 
+    // TO test
+    /*
+    if (Object.values(AppActionTypes).includes(action.type)) {
+        return Promise.resolve(action);
+    }
+    */
+
     switch (action.type) {
       case AppActionTypes.MESSAGE_INPUT:
         return Promise.resolve(action);
