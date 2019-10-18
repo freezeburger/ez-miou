@@ -1,20 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Room from './app/containers/room/room.container';
-import Home from './app/containers/home/home.container';
-import Talk from './app/containers/talk/talk.container';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Room from "./app/containers/room/room.container";
+import Home from "./app/containers/home/home.container";
+import Talk from "./app/containers/talk/talk.container";
 
 import Routes from "./routes";
+import NoRouto from "./routes";
 
 ReactDOM.render(
   <React.Fragment>
-    <Home></Home>
-    <Room></Room>
-    <Talk></Talk>
+    <NoRouto />
   </React.Fragment>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
