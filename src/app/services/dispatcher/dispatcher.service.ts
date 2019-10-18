@@ -1,7 +1,6 @@
-import AppDispatcher, {
-  AppDispatcherAction,
-  AppActionTypes
-} from "../@types/app-dispatcher";
+import AppDispatcher, {AppDispatcherAction, AppActionTypes} from "../@types/app-dispatcher";
+import UserManager from "../logic/user-manager.service";
+import { actions } from "@storybook/addon-actions";
 
 declare const window: any;
 
@@ -12,9 +11,12 @@ class Dispatcher implements AppDispatcher {
     window["getHistory"] = this.getHistory.bind(this);
   }
 
-  getHistory() {
-    console.table(this._history);
-  }
+    private userService = UserManager;
+
+    constructor() {
+        console.warn(Date.now())
+        window['getHistory'] = this.getHistory.bind(this)
+    }
 
   dispatch(action: AppDispatcherAction): Promise<AppDispatcherAction> {
     this._history.push(Object.assign({ time: Date.now() }, action));
@@ -26,8 +28,13 @@ class Dispatcher implements AppDispatcher {
       case AppActionTypes.MESSAGE_RECEIVED:
         return Promise.resolve(action);
 
-      case AppActionTypes.NOTIFICATION:
-        return Promise.resolve(action);
+            case AppActionTypes.USER_LOGIN:
+                return this.userService
+                            .login(action.data)
+                            .then( res => {
+                                action.result = res;
+                                return action;
+                            });
 
       case AppActionTypes.ROOM_CREATION_REQUEST:
         return Promise.resolve(action);

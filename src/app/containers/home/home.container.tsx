@@ -53,14 +53,15 @@ componentDidUpdate(prevProps: any, prevState: any) {
 }
 
 authorize(e?:any) {
-    alert(1)
-    this.dispatcher.dispatch({
+    const action = {
         type:AppActionTypes.USER_LOGIN,
         data:{
             name:this.inputRef.current.value,
             email:this.pswdRef.current.value
         }
-    })
+    };
+
+    this.dispatcher.dispatch(action).then( wtf => console.log(wtf) )
 }
 
 handleSubmit(event:any) {
