@@ -10,7 +10,7 @@ const MockUser:AppUser = {
 }
 
 
-export class UserManager implements AppManager<AppUser>{
+class UserManager implements AppManager<AppUser>{
 
     public create(options: any): Promise<AppUser> {
         return Promise.resolve(MockUser);
@@ -47,4 +47,6 @@ export class UserManager implements AppManager<AppUser>{
 
 }
 
-export default UserManager;
+const manager = new UserManager();
+
+export default manager ;

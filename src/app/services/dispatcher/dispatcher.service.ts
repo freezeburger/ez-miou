@@ -1,10 +1,14 @@
 import AppDispatcher, {AppDispatcherAction, AppActionTypes} from "../@types/app-dispatcher";
+import UserManager from "../logic/user-manager.service";
+import { actions } from "@storybook/addon-actions";
 
 declare const window:any;
 
 class Dispatcher implements AppDispatcher{
 
     private _history:any[] = [];
+
+    private userService = UserManager;
 
     constructor() {
         console.warn(Date.now())
@@ -22,7 +26,12 @@ class Dispatcher implements AppDispatcher{
         switch (action.type) {
 
             case AppActionTypes.USER_LOGIN:
-                return Promise.resolve(action);
+                return this.userService
+                            .login(action.data)
+                            .then( res => {
+                                action.result = res;
+                                return action;
+                            });
 
             case AppActionTypes.USER_LOGOUT:
                 return Promise.resolve(action);
