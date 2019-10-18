@@ -7,7 +7,7 @@ import Room from './app/containers/room/room.container';
 import Talk from './app/containers/talk/talk.container';
 
 ReactDOM.render(
-    <Home />,
+    <Talk />,
   document.getElementById('root')
 );
 
