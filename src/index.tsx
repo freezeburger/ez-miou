@@ -9,11 +9,11 @@ import Talk from './app/containers/talk/talk.container';
 import Routes from "./routes";
 
 ReactDOM.render(
-  <div>
+  <React.Fragment>
     <Home></Home>
     <Room></Room>
     <Talk></Talk>
-  </div>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 
