@@ -4,11 +4,16 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserProfile from './app/components/user-profile/userprofile.component';
 import RoomCloud from './app/components/room-cloud/room-cloud.component';
+import Home from './app/containers/home/home.container';
+
+import Routes from "./routes";
 
 ReactDOM.render(
   <div>
-    <RoomCloud/>
-    <UserProfile></UserProfile>
+    {/* <RoomCloud/>
+    <UserProfile></UserProfile> */}
+
+    <Routes/>
 
   </div>,
   document.getElementById('root')

@@ -1,0 +1,31 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Java Talk",
+      "subject": "Java talk",
+      "color": "cornflowerblue",
+      "usersId":[1,2,3]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Bob",
+      "email": "bob@bob.bob",
+      "status": "ONLINE"
+    },
+    {
+      "id": 2,
+      "name": "bill",
+      "email": "bill@bill.bill",
+      "status": "ONLINE"
+    },
+    {
+      "id": 3,
+      "name": "ben",
+      "email": "ben@ben.ben",
+      "status": "OFFLINE"
+    }
+  ]
+}

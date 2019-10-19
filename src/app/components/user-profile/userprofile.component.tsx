@@ -1,14 +1,11 @@
 import React from 'react';
 import "./userprofile.scss";
 import UserProps from '../@prop-types/user-props';
-import { checkPropTypes } from 'prop-types';
-import MessageListProps from '../@prop-types/message-list.props';
 import { userProfileDefaultProps } from './userprofile.defaultProps';
 import Button from '../button/button.component';
 import UserProfileProps from '../@prop-types/user-profile-props';
 import { BtnTypes } from '../@prop-types/button.props';
 import Avatar from '../avatar/avatar.component';
-import MessageList from '../message-list/messagelist.component';
 import AppMessage from '../../services/@types/app-message';
 
 /** state */
@@ -60,13 +57,6 @@ class UserProfile extends React.Component<UserProfileProps, IState> {
 
     render() {
         const { user, editAction, deleteAction } = this.props;
-        // const { messages } = this.state.messagesList;
-        // const initialMessages = messages.map((message:any, index:number) => {
-        //     return <li key={index}>
-        //         <span>date:{message.date}</span>
-        //         <p>{message.content}</p>
-        //     </li>
-        // })
         
         return (
             <div className="user-profile row profile">
@@ -78,13 +68,6 @@ class UserProfile extends React.Component<UserProfileProps, IState> {
 
                         <User {...user}/>
 
-                        {/* <MessageList messages={initialMessages}></MessageList> */}
-
-                        {/* <div className="profile-usertitle-mesages">
-                            <ul>
-                                {initialMessages}
-                            </ul>
-                        </div> */}
                         <div className="profile-userbuttons">
                             <Button action={editAction} ><span>Edit</span></Button>
                             <Button action={deleteAction} btnTypes={BtnTypes.DANGER} ><span>Delete</span></Button>
