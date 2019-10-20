@@ -1,0 +1,22 @@
+.search-wrapper {
+    display: inline-block;
+    padding: 1vh 3vw;
+    width: 100vw;
+    input.form-control {
+        margin: auto;
+        width: 80vw;
+        float: left;
+        
+    }
+    button {
+        float: left;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 670px) {
+        .form-control {
+          width: 65vw !important;
+        }
+      }
+
+}

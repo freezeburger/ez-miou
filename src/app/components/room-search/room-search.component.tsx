@@ -2,6 +2,7 @@ import React from 'react';
 import RoomSearchProps from '../@prop-types/room-search.props';
 import Button from '../button/button.component';
 import { FaSearch } from 'react-icons/fa';
+import './room-search.scss'
 
 /**
  * The state contains the term being searched
@@ -34,7 +35,7 @@ class RoomSearch extends React.Component<RoomSearchProps, RoomSearchState> {
     render() {
         const searchTerm = this.state.searchTerm;
         return (
-            <fieldset>
+            <fieldset className="search-wrapper">
                 <input
                     className="form-control"
                     value={searchTerm}
