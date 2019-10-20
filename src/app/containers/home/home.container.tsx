@@ -4,12 +4,13 @@ import { BtnTypes } from '../../components/@prop-types/button.props';
 import { FaLock } from 'react-icons/fa';
 import './home.scss';
 import Dispatcher from '../../services/dispatcher/dispatcher.service';
-import { AppActionTypes } from '../../services/@types/app-dispatcher';
+import GlobalEmitter from '../../services/event-emitters/global-emitter.service';
+import { AppActionTypes, AppDispatcherAction } from '../../services/@types/app-dispatcher';
 
 
 /** state */
 interface IState {
-    password: string;
+    password?: string;
 }
 
 
@@ -26,6 +27,7 @@ inputRef: any;
 history: any;
 
 private dispatcher = Dispatcher;
+private globalEmitter = GlobalEmitter;
 
 constructor(props:any) {
     super(props);
@@ -53,17 +55,26 @@ componentDidUpdate(prevProps: any, prevState: any) {
 }
 
 authorize(e?:any) {
-    alert(1)
-    this.dispatcher.dispatch({
+    
+    const action:AppDispatcherAction = {
         type:AppActionTypes.USER_LOGIN,
         data:{
             name:this.inputRef.current.value,
             email:this.pswdRef.current.value
         }
-    })
+    };
+
+    this.dispatcher.dispatch(action)
+                   .then( action => {
+                       
+                       // console.log(action);
+                       this.globalEmitter.emit('EVT_USER_CONNECTED',action.result);
+
+                    })
+                   .catch( err => alert('Nope !'))
 }
 
-handleSubmit(event:any) {
+handleSubmit = (event:any) =>{
     event.preventDefault();
     this.authorize();
 }

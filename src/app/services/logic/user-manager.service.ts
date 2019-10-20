@@ -1,5 +1,6 @@
-import AppManager from '../@types/app-manager';
-import AppUser, { AppUserStatus } from '../@types/app-user';
+import AppManager from "../@types/app-manager";
+import AppUser, { AppUserStatus } from "../@types/app-user";
+import StorageManager from '../storage/storage-manager.service'
 
 const MockUser: AppUser = {
   avatarUrl: 'http://robohash.org/bobo',
@@ -14,7 +15,9 @@ export class UserManager implements AppManager<AppUser> {
     Promise.resolve(MockUser);
   }
 
-export class UserManager implements AppManager<AppUser>{
+class UserManager implements AppManager<AppUser>{
+
+    private storage = StorageManager
 
     public create(options: any): Promise<AppUser> {
         return Promise.resolve(MockUser);
@@ -42,6 +45,9 @@ export class UserManager implements AppManager<AppUser>{
   // Abstraction
 
     public login(user:Partial<AppUser>) {
+
+        this.storage.read(undefined,true).then( data => console.table(data))
+
         return Promise.resolve(MockUser);
     }
 
@@ -52,4 +58,6 @@ export class UserManager implements AppManager<AppUser>{
 
 }
 
-export default UserManager;
+const manager = new UserManager();
+
+export default manager ;
