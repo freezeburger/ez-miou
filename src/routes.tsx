@@ -44,8 +44,8 @@ class NoRouto extends React.Component{
   render(){
     return (
       <React.Fragment>
-          <Color Comp={Div} color="blue"/>
-          <Color Comp={Div} color="red"/>
+          {/* <Color Comp={Div} color="blue"/>
+          <Color Comp={Div} color="red"/> */}
           <this.state.ChuckNorris/>
       </React.Fragment>
     );
